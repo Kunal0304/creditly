@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="row">
+        <form *ngIf="formGroup?.controls" [formGroup]="formGroup">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5 col-12 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Total monthly deductions</label>
+                                <input type="number" class="form-control" placeholder="Enter total monthly deductions"  formControlName="monthlyDeductions">
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 col-12 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Total monthly Obligations</label>
+                                <p>{{formGroup.value.monthlyExtraExpences}}</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-md-12">
+            <p class="">Credit cards</p>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="row color-section" *ngFor="let card of cardLimits;let i=index;">
+                <div class="col-md-5 col-12 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Card Name</label>
+                                <input type="text" class="form-control" placeholder="Enter card name" >
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 col-12 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Card limit</label>
+                                <input type="number" class="form-control" (change)="otherLimits(i,$event)"  placeholder="Enter card limit"  >
+                            </div>
+                    </div>
+                    <button class="btn btn-sm f-btn float-right mb-2" *ngIf="i!=0" (click)="removeCard(i)">remove</button>
+           </div>
+            </div>
+        </div>
+        <div class="col-md-12 p-0">
+            <button class="btn addcard-btn" (click)="addCard()">Add Card &nbsp;<i class="fa fa-plus"></i></button>
+        </div>
+        <div class="col-md-12 details-row">
+            <p class="opacity">DBR</p>
+            <input type="number" class="form-control" placeholder="DBR" formControlName="currentDBR">
+        </div>
+        <div class="col-md-12 mt-4">
+            <p class="mb-2"><b>Responsible lending</b></p>
+        </div>
+        <div class="col-md-12 details-row mb-2">
+            <p class="opacity">Number of dependencys</p>
+            <input type="number" class="form-control" placeholder="Enter number of dependencys" formControlName="dependencies">
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Housing</label>
+                                <input type="number" class="form-control" (change)="obligationsCalculation()" placeholder="Housing" formControlName="housing">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">F&B</label>
+                                <input type="number" class="form-control" placeholder="F&B" (change)="obligationsCalculation()" formControlName="fAndB">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Expat fees</label>
+                                <input type="number" class="form-control" placeholder="Expat feesr" (change)="obligationsCalculation()" formControlName="expatFees">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Communication</label>
+                                <input type="number" class="form-control" placeholder="Communication" (change)="obligationsCalculation()" formControlName="communication">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Healthcare & insurance</label>
+                                <input type="number" class="form-control" placeholder="Healthcare" (change)="obligationsCalculation()" formControlName="healthcareAndInsurance">
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Utilities</label>
+                                <input type="number" class="form-control" placeholder="Enter Utilities" (change)="obligationsCalculation()" formControlName="utilities">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Household assistance</label>
+                                <input type="number" class="form-control" placeholder="Household assistance" (change)="obligationsCalculation()" formControlName="householdAssistance">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Transportation</label>
+                                <input type="number" class="form-control" placeholder="Transportation" (change)="obligationsCalculation()" formControlName="transportation">
+                            </div>
+                    </div>
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Tuition fees</label>
+                                <input type="number" class="form-control" placeholder="Tuition fees" (change)="obligationsCalculation()" formControlName="tuitionFees">
+                            </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label class="form-label" for="">Total Card Limit</label>
+                            <p>{{formGroup.value.otherCardsLimits}}</p>
+                        </div>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="text-center ml-3" *ngIf="item!='true'" >
+            <button class="btn btn-sm cc-btn-primary" [disabled]="submit" id="updateProfile" (click)="update()">Update</button>
+          </div>
+       </form>
+    </div>
+</div>

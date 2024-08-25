@@ -1,0 +1,251 @@
+<div class="profile-section">
+
+  <!-- Header section logos part -->
+  <div class="header-section">
+    <div class="">
+      <div class="d-flex justify-content-center align-items-center">
+        <span><img src="../../../../assets/images/main_images/ar.PNG" width="30px" /> </span>
+        <span><strong>AR</strong></span>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <div class="main-logo"[routerLink]="['/creditly/cards-list']">
+          <span><a >
+              <img src="../../../../assets/images/header-images/header-main-logo.png" height="65px" /></a>
+          </span>
+          <span class="logo-title">
+            <b>Creditly</b></span>
+        </div>
+        <div class="">
+          <div class="d-flex justify-content-center">
+            <div class="login_section_left">
+              <div class="inner_login_left">
+              </div>
+            </div>
+            <div class="login_section_right">
+              <div class="inner_login_right">
+              </div>
+            </div>            
+          </div>
+          <!-- <p class="text-center mb-0 mr-3">
+            <span><img class="left-arrow" src="../../../../assets/images/main_images/triangle.svg" /></span>
+            <span><img src="../../../../assets/images/main_images/triangle.svg" /></span>
+          </p> -->
+          <div class="dropdown">
+            <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+              aria-expanded="false">
+              <strong>Wilson</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+              <div>
+                <span id="triangle-up"></span>
+              </div>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <p class="mb-0 fw">Wilson</p>
+                  <p class="mb-0 f-12 l-h">Bank admin</p>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <p class="mb-0 fw">Profile</p>
+                </a>
+              </li>
+              <li (click)="logout()"><a class="dropdown-item" href="#">
+                  <p class="mb-0 d-flex align-items-center">
+                    <span class="material-icons-outlined" style="font-size: 16px;" >
+                      logout</span> &nbsp;
+                    <span class="fw">Logout</span>
+                  </p>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content section -->
+  <div class="main-content-section">
+    <div class="tab-section">
+      <div class="row">
+        <div class="profile-tabs">
+          <ul class="nav nav-pills flex-column" id="pills-tab" role="tablist" aria-orientation="vertical">
+            <li class="nav-item">
+              <a class="nav-link person-name" id="pill1" role="tab" aria-selected="false">Hello
+              </a>
+            </li>
+            <li class="nav-item" (click)="currentTab='profile'">
+              <!--  <a class="nav-link profile" id="pill1" role="tab" aria-selected="false">Profile
+            </a> -->
+              <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                aria-controls="pills-profile" aria-selected="true">
+                <!-- <span class="d-block d-md-none d-lg-none">
+                  <i data-toggle="tooltip" data-placement="top" title="Profile"
+                    class="fa fa-user" aria-hidden="true"></i></span> -->
+                <span class="">Profile</span>
+              </a>
+            </li>
+            <li class="nav-item" (click)="currentTab='personal'">
+              <a class="nav-link " id="pills-personal-tab" data-toggle="pill" href="#pills-personal" role="tab"
+                aria-controls="pills-personal" aria-selected="true">
+                <span class="">Personal details</span>
+              </a>
+            </li>
+            <li class="nav-item" (click)="currentTab='contact'">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                aria-controls="pills-contact" aria-selected="false">
+                
+                <span class="">Contact</span></a>
+            </li>
+            <li class="nav-item" (click)="currentTab='employment'">
+              <a class="nav-link" id="pills-employment-tab" data-toggle="pill" href="#pills-employment" role="tab"
+                aria-controls="pills-employment" aria-selected="false">
+                
+                <span class="">Employment details</span></a>
+            </li>
+            <li class="nav-item" (click)="currentTab='financial'">
+              <a class="nav-link" id="pills-financial-tab" data-toggle="pill" href="#pills-financial" role="tab"
+                aria-controls="pills-financial" aria-selected="false">
+                
+                <span class="">Financial details</span></a>
+            </li>
+            <li class="nav-item" (click)="currentTab='bank'">
+              <a class="nav-link" id="pills-bankaccount-tab" data-toggle="pill" href="#pills-bankaccount" role="tab"
+                aria-controls="pills-bankaccount" aria-selected="false">
+                <span class="">Bank account</span> </a>
+            </li>
+            <li class="nav-item" (click)="currentTab='request'">
+              <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab"
+                aria-controls="pills-requests" aria-selected="false">
+                <span class=""> <strong>Requests</strong></span>
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content profile-content" id="pills-tabContent py-2 px-4">
+            <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
+              aria-labelledby="pills-profile-tab">
+              <app-profile-info></app-profile-info>
+            </div>
+            <div class="tab-pane fade " id="pills-personal" role="tabpanel" aria-labelledby="pills-personal-tab">
+              <app-personal-details></app-personal-details>
+            </div>
+            <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <app-contact-info></app-contact-info>
+            </div>
+            <div class="tab-pane fade" id="pills-employment" role="tabpanel" aria-labelledby="pills-employment-tab">
+              <app-employment-details></app-employment-details>
+            </div>
+            <div class="tab-pane fade" id="pills-financial" role="tabpanel" aria-labelledby="pills-financial-tab">
+              <app-financial-details></app-financial-details>
+            </div>
+            <div class="tab-pane fade" id="pills-bankaccount" role="tabpanel" aria-labelledby="pills-bankaccount-tab">
+              <app-bank-account-details></app-bank-account-details>
+            </div>
+            <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+              <app-history-details></app-history-details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recommended-section" *ngIf="currentTab==='profile'">
+      <div class="recommended-section-body">
+        <p style="color: #777D90;">Recommended products for you:</p>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+          (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)">
+          <div ngxSlickItem class="slide">
+            <div class="custom-card1 card">
+              <div class="card-body f-12 px-3 py-3">
+                <div class="cc-img">
+                  <img src="../../../../assets/images/main_images/visa_dummy_image.png" width="80px">
+                </div>
+                <div class="cc-title">
+                  <p class="mb-1">Credit card</p>
+                  <p class="f-18 c-txt">Visa Platinum Credit Card</p>
+                </div>
+                <div class="mb-2">
+                  <img src="../../../../assets/images/main_images/bank_almad.png" width="80px" />
+                </div>
+                <div class="text-center d-flex justify-content-center">
+                  <span><u><strong>View more</strong></u></span>
+                  &nbsp; &nbsp; &nbsp;
+                  <span><u><strong>Apply now</strong></u></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <div class="custom-card1 card">
+              <div class="card-body f-12 px-3 py-3">
+                <div class="cc-img">
+                  <img src="../../../../assets/images/main_images/visa_dummy_image.png" width="80px">
+                </div>
+                <div class="cc-title">
+                  <p class="mb-1">Credit card</p>
+                  <p class="f-18 c-txt">Visa Platinum Credit Card</p>
+                </div>
+                <div class="mb-2">
+                  <img src="../../../../assets/images/main_images/bank_almad.png" width="80px" />
+                </div>
+                <div class="text-center d-flex justify-content-center">
+                  <span><u><strong>View more</strong></u></span>
+                  &nbsp; &nbsp; &nbsp;
+                  <span><u><strong>Apply now</strong></u></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <div class="custom-card1 card">
+              <div class="card-body f-12 px-3 py-3">
+                <div class="cc-img">
+                  <img src="../../../../assets/images/main_images/visa_dummy_image.png" width="80px">
+                </div>
+                <div class="cc-title">
+                  <p class="mb-1">Credit card</p>
+                  <p class="f-18 c-txt">Visa Platinum Credit Card</p>
+                </div>
+                <div class="mb-2">
+                  <img src="../../../../assets/images/main_images/bank_almad.png" width="80px" />
+                </div>
+                <div class="text-center d-flex justify-content-center">
+                  <span><u><strong>View more</strong></u></span>
+                  &nbsp; &nbsp; &nbsp;
+                  <span><u><strong>Apply now</strong></u></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <div class="custom-card1 card">
+              <div class="card-body f-12 px-3 py-3">
+                <div class="cc-img">
+                  <img src="../../../../assets/images/main_images/visa_dummy_image.png" width="80px">
+                </div>
+                <div class="cc-title">
+                  <p class="mb-1">Credit card</p>
+                  <p class="f-18 c-txt">Visa Platinum Credit Card</p>
+                </div>
+                <div class="mb-2">
+                  <img src="../../../../assets/images/main_images/bank_almad.png" width="80px" />
+                </div>
+                <div class="text-center d-flex justify-content-center">
+                  <span><u><strong>View more</strong></u></span>
+                  &nbsp; &nbsp; &nbsp;
+                  <span><u><strong>Apply now</strong></u></span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </ngx-slick-carousel>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class='footer-section'>
+    <app-footer></app-footer>
+  </div>
+</div>

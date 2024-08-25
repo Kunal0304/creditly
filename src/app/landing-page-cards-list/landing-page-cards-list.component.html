@@ -1,0 +1,295 @@
+<!-- <p>landing-page-cards-list works!</p> -->
+
+
+<section id="cards-list-page">
+    <div>
+        <div>
+            <div class="container">
+                <p class="looking_for">1 WILL USE THE CARD FOR</p>
+                <!-- nav options -->
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true">All
+                        </a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                            href="#pills-profile" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Travel</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">
+                            Cashback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">
+                            Virtual card</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="sky_background">
+            <div class="container">
+                <div class="tab-content" id="pills-tabContent p-3">
+                    <!-- 1st card -->
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="content">
+                            <p>Find the right Credit Card for you</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="monthly_income">
+                                    <p class="text">Your Monthly Income</p>
+                                    <p class="amount">SAR 25,000</p>
+                                </div>
+                                <div class="slider-margin">
+                                    <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="are_you_from">
+                                    <p>Are you Saudi?</p>
+                                    <div class="custom_radio_button">
+                                        <span><input type="radio" name="from" id="yes"> Yes</span>
+                                        <span class="no_radio"><input type="radio" name="from" id="no"> No</span>
+                                    </div>
+                                    <!-- <div class="custom_radio_button">
+                                        <label class="container">One
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Two
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="find_cards_section">
+                                <button class="btn btn-md find_cards_btn">FIND CREDIT CARDS</button>
+                                <!-- <div class="find_cards_content"> -->
+                                <p>One click to see all credit cards from all Saudi banks</p>
+                                <p class="more_text">e.g. Alrajhi Bank, Riyad Bank, Alinma bank, Albilad Bank,
+                                    Aljazirah bank,
+                                    NCB,
+                                    ANB and more…</p>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div> <!-- 2nd card -->
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form-group addinfo"> <label for="exampleFormControlTextarea1">Write additional
+                                info.</label> <textarea class="form-control" id="exampleFormControlTextarea1"
+                                rows="3"></textarea> </div>
+                    </div> <!-- 3nd card -->
+                    <div class="tab-pane fade third" id="pills-contact" role="tabpanel"
+                        aria-labelledby="pills-contact-tab">
+                        <div class="form">
+                            <div class="form-group"> <label for="exampleFormControlSelect1">Value
+                                    Type<span>i</span></label> <select class="form-control round"
+                                    id="exampleFormControlSelect1">
+                                    <option class="">United States Dollar</option>
+                                    <option class="amount">Indian Rupees</option>
+                                </select> </div>
+                            <div class="form-group"> <label>amount</label> <input class="form-control amount"
+                                    placeholder="1500" /> </div> <button class="btn btn-success">Insert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="cards_list">
+            <div class="container">
+                <div class="filter_part">
+                    <p>Filter</p>
+                    <p>Sort</p>
+                </div>
+                <div class="no_fees_and_add_filter">
+                    <div class="no_fees">
+                        <p><span>X</span> No annual fees</p>
+                    </div>
+                    <div class="add_filter">
+                        Add filter +
+                    </div>
+                </div>
+                <div>
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <div class="visa_main_part">
+                                <div>
+                                    <h1>Visa Platinum Credit Card</h1>
+                                </div>
+                                <div class="share_and_compare">
+                                    <div class="user_option">
+                                        <img src="../../assets/images/main_images/share_icon.png" alt="">
+                                        <span>Share</span>
+                                    </div>
+                                    <div class="user_option">
+                                        <img src="../../assets/images/main_images/add_to_compare_icon.png" alt="">
+                                        <span>Add to compare</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div class="visa_image">
+                                            <img src="../../assets/images/main_images/visa_dummy_image.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row amount_types">
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>0</h1> <span>SAR</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual fee for the first year</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>2.15</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual Percentage Rate</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>5</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Monthly Minimum Payment</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div>
+                                            <button class="btn btn-md btn-block apply-btn">Apply Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row text-center">
+                                            <div class="col-md-4 refund_not">
+                                                <img src="../../assets/images/main_images/flight_icon.png" alt="">
+                                                <span>Cash-back</span>
+                                            </div>
+                                            <div class="col-md-4 refund_not">
+                                                <img src="../../assets/images/main_images/flight_icon.png" alt="">
+                                                <span>240 lounge access</span>
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <div class="goto_details">
+                                        <img src="../../assets/images/header-images/triangle-green-background.png"
+                                            alt="">
+                                        <span>Card Details</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card custom-card" style="margin-bottom: 100px;">
+                        <div class="card-body">
+                            <div class="visa_main_part">
+                                <div>
+                                    <h1>Visa Platinum Credit Card</h1>
+                                </div>
+                                <div class="share_and_compare">
+                                    <div class="user_option">
+                                        <img src="../../assets/images/main_images/share_icon.png" alt="">
+                                        <span>Share</span>
+                                    </div>
+                                    <div class="user_option">
+                                        <img src="../../assets/images/main_images/add_to_compare_icon.png" alt="">
+                                        <span>Add to compare</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div class="visa_image">
+                                            <img src="../../assets/images/main_images/visa_dummy_image.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row amount_types">
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>0</h1> <span>SAR</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual fee for the first year</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>2.15</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual Percentage Rate</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="amount">
+                                                    <h1>5</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Monthly Minimum Payment</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div>
+                                            <button class="btn btn-md btn-block apply-btn">Apply Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row text-center">
+                                            <div class="col-md-4 refund_not">
+                                                <img src="../../assets/images/main_images/flight_icon.png" alt="">
+                                                <span>Cash-back</span>
+                                            </div>
+                                            <div class="col-md-4 refund_not">
+                                                <img src="../../assets/images/main_images/flight_icon.png" alt="">
+                                                <span>240 lounge access</span>
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <div class="goto_details">
+                                        <img src="../../assets/images/header-images/triangle-green-background.png"
+                                            alt="">
+                                        <span>Card Details</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

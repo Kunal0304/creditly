@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~angular-notifier/styles";
+@import 'material-icons/iconfont/material-icons.scss';
+@import "./variable_styles.scss";
+
+/* body {
+  // background: url(./assets/images/main_images/Component_background_lines.svg) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.layout-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 16px;
+  background-image: url(./assets/images/main_images/Component_background_lines.svg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  @include mobile {
+    margin: 0px 0px;
+  }
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a
+{
+  font-family: "Cairo", sans-serif !important;
+}
+
+.slider-margin {
+  margin: 20px 0px;
+}
+
+.add-filter-dropdown {
+  cursor: pointer;
+  ul li {
+    padding: 7px 0px;
+    &:hover {
+      background-color: #09BC8A;
+      color: #fff;
+    }
+    a {
+      padding: 5px 12px;
+    }
+  }
+  
+  .dropdown-menu.show {
+    left: 31px !important;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+
+/* .container {
+  max-width: 912px !important;
+} */
+
+.material-icons {
+  cursor: pointer;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+ {
+  outline: 0px !important;
+//   -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+select:focus {
+    outline: 0px !important;
+    // -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+
+
+  .theme_container {
+    max-width: 912px;
+    margin: auto;
+    .col-md-12, .col-md-3, .col-md-4, .col-md-6 {
+      // border-left: dotted 2px #ccc;
+      // border-right: dotted 2px #ccc;
+      // padding-left: 0px;
+    }
+  }
+
+  
+
+   /* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 23px;
+  width: 22px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #000 !important;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: transparent;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #000;
+  border: transparent !important;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 8px;
+  left: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+}

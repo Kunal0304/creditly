@@ -1,0 +1,99 @@
+<!-- <p>login works!</p> -->
+
+<section id="login_page">
+  <div class="">
+    <div class="background_shapes">
+      <div class="register-container">
+        <div class="top_background_shape"></div>
+        <div class="bottom_background_shape"></div>
+        <div class="register-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-12">
+                <div class="register-left-content">
+                  <div class="app-title">
+                    <p [routerLink]="['/creditly/applycard']" routerLinkActive="router-link-active"><span
+                        class="material-icons-outlined">
+                        chevron_left
+                      </span>Back to application form</p>
+                  </div>
+                  <div class="register-content">
+                    <p>
+                      <span class="material-icons">check</span> Sign your contract
+                    </p>
+                    <small>Online without the need to visit the branch</small>
+                  </div>
+                  <div class="register-content d-none">
+                    <p>
+                      <span class="material-icons">check</span>
+                      Get best product
+                    </p>
+                    <small>Starting from the online account opening to getting any
+                      banking product. Creditly is your one stop shop to check
+                      and compare products from different banks and find their
+                      features easily</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8 col-12">
+                <div class="register_card">
+                  <div class="card custom-card">
+                    <div class="card-body">
+
+                      <div class="applied-item">
+                        <img src="../../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                        <div>
+                          <p>Credit card</p>
+                          <h2>Visa Platinum Credit Card</h2>
+                        </div>
+                        
+                      </div>
+
+                      <div class="otp-one-step">
+                        <div class="main_heading">
+                          <h5>Enter the verification code you received on your mobile</h5>
+                        </div>
+                        <div class="register_form">
+                          <form>
+                            <div class="form-group">
+                              <label for="">Verification Code</label>
+                              <input type="text" class="form-control" placeholder="Enter otp" />
+                            </div>
+
+                            <div class="text-center mt-5">
+                              <button class="btn btn-md register_btn confirm_btn" (click)="gotoConfirm()">
+                                Confirm
+                              </button>
+                              <!-- (click)='currentDisplaySection =2' -->
+                            </div>
+                            <div class="disclaimer_text">
+                                <p>
+                                  Disclaimer, Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit, sed do eiusmod tempor incididunt ut
+                                  labore et dolore magna aliqua. Lorem ipsum dolor sit
+                                  amet, consectetur adipiscing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                              </div>
+                          </form>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="creditly_logo">
+          <img src="../../assets/images/header-images/header-main-logo.png" width="40px" alt="" />
+          <h2>Creditly</h2>
+        </div>
+        <div class="terms_conditions">
+          <a>Privacy & Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

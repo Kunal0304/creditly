@@ -1,0 +1,269 @@
+@import "../../../variable_styles.scss";
+
+.resend-code-text {
+  font-size: 12px;
+    font-weight: 700;
+    color: $primary_green;
+    .code-time {
+      color: #ccc;
+      font-size: 13px;
+    }
+    .code-text {
+      font-size: 20px;
+      margin-left: 22px;
+      text-align: center;
+    }
+}
+
+#login_page {
+  position: relative;
+  .background_shapes {
+    position: relative;
+    .register-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .top_background_shape {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 79%);
+        background: #fff;
+        height: 1000px;
+        @include mobile {
+          height: 900px;
+        }
+      }
+      .bottom_background_shape {
+        clip-path: polygon(0 35%, 100% 100%, 100% 100%, 0 100%);
+        background: #000;
+        height: 1000px;
+        margin-top: -1000px;
+        @include mobile {
+          height: 900px;
+          margin-top: -900px;
+          clip-path: polygon(0 35%, 100% 58%, 100% 100%, 0% 100%);
+        }
+      }
+    }
+  }
+  .register-wrapper {
+    position: absolute;
+    z-index: 2;
+    left: 45%;
+    transform: translate(-45%, -275px);
+    top: 350px;
+    @include mobile {
+      top: 300px;
+    }
+    .register-left-content {
+      padding: 20px 0;
+      @include mobile {
+        display: none;
+      }
+      .app-title {
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: #000;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+      .register-content {
+        margin-bottom: 25px;
+        p {
+          margin-bottom: 2px;
+          color: $primary_green;
+          font-size: 22px;
+          font-family: "Cairo", sans-serif;
+          font-weight: 300;
+          span {
+            border-left: 1px solid;
+            font-size: 14px;
+            padding-left: 4px;
+            padding-right: 6px;
+            font-family: "Material Icons" !important;
+          }
+        }
+        small {
+          line-height: 14px;
+          display: block;
+          font-size: 70%;
+          color: #777d90;
+          font-family: "Cairo", sans-serif;
+          font-weight: 300;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  .creditly-logo-header {
+    display: none;
+    align-items: center;
+    margin-bottom: 20px;
+    @include mobile {
+      display: flex;
+    }
+    img {
+        max-width: 60px;
+        @include mobile {
+            max-width: 40px;
+        }
+    }
+    h2 {
+        margin-bottom: 0px;
+        margin-left: 20px;
+        font-size: 25px;
+    }
+  }
+  .register_card {
+    width: 500px;
+    margin: auto;
+    @include mobile {
+      max-width: 315px;
+    }
+    
+    .custom-card {
+      box-shadow: 0px 0px 26px #00000029;
+      border: none;
+      .status-stepper {
+        ul {
+          list-style-type: none;
+          margin: 0 auto;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          li {
+            span.stepper-ball {
+              width: 20px;
+              height: 20px;
+              border: 2px solid #292f39;
+              border-radius: 50%;
+              display: list-item;
+              margin: auto;
+            }
+            small {
+              color: #777d90;
+              font-size: 70%;
+            }
+          }
+
+          li.stepper-line-wrapper {
+            display: inline-flex;
+            align-self: flex-start;
+            margin: 10px 0;
+            span.stepper-line {
+              border: 1px solid;
+              width: 50px;
+              margin: 0 10px;
+            }
+          }
+
+          .stepper-active {
+            border-color: $primary_green !important;
+            background: $primary_green;
+          }
+        }
+      }
+      .main_heading {
+        margin: 25px 0px;
+        font-family: "Cairo", sans-serif;
+        @include mobile {
+          margin: 5px 0px;
+        }
+      }
+      .register_form {
+        margin: 50px 0px 20px 0px;
+        @include mobile {
+          margin: 20px 0px;
+        }
+        .form-group {
+          label {
+            font-family: "Cairo", sans-serif;
+          }
+          .form-control {
+            border: none;
+            border-bottom: solid 1px #000;
+            border-radius: 0px;
+            padding-left: 0px;
+          }
+        }
+        .register_btn {
+          background-color: $primary_green;
+          //   padding: 8px 40px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 3px;
+          transition: 0.3s all;
+          font-family: "Cairo", sans-serif;
+          &:hover {
+            background-color: #07ab7d;
+          }
+        }
+        .confirm_btn {
+          padding: 8px 70px;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+      .go_login {
+        text-align: center;
+        p {
+          font-size: 13px;
+          font-family: "Cairo", sans-serif;
+          a {
+            color: $primary_green;
+            font-weight: 600;
+          }
+        }
+      }
+      .disclaimer_text {
+        margin-top: 15px;
+        p {
+          font-size: 11px;
+          color: #777d90;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+    }
+  }
+  .creditly_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 20%;
+    bottom: 18%;
+    color: #fff;
+    @include mobile {
+      display: none;
+      bottom: 13%;
+      left: 31%;
+    }
+    img {
+      max-width: 60px;
+    }
+    h2 {
+      margin-bottom: 0px;
+      margin-left: 20px;
+      font-size: 25px;
+      font-family: "Cairo", sans-serif;
+    }
+  }
+  .terms_conditions {
+    position: absolute;
+    bottom: 15px;
+    left: 46%;
+    // text-align: center;
+    font-family: "Cairo", sans-serif;
+    @include mobile {
+      left: 36%;
+      bottom: 1%;
+    }
+    a {
+      color: #01dbff;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+}

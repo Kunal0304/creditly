@@ -1,0 +1,513 @@
+<!-- <p>cards-list-lan ding-page works!</p> -->
+<!-- class="global_main_section" -->
+
+
+
+<div class="">
+    <div class="layerMask">
+        <div class="backgroundMask">
+            <div class="background">
+                <div class="own-bg"></div>
+                <div class="content_on_grey_bg">
+                    <div class="two_parts">
+                        <div class="first_part">
+                            <h1>Find the credit card that suits your needs from all Saudi Arabia banks</h1>
+                        </div>
+                        <div class="second_part">
+                            <img src="../../../assets/images/main_images/cards_list_header_image.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="cards-list-page">
+    <div>
+        <div>
+            <div class="container">
+                <div class="layout-container">
+                    <p class="looking_for">1 WILL USE THE CARD FOR</p>
+                    <!-- nav options -->
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" (click)="selectCard(0)">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" 
+                                role="tab" aria-controls="pills-home" aria-selected="true">All
+                            </a>
+                        </li>
+                        <li *ngFor="let card of cards" class="nav-item" (click)="selectCard(card?.id)"> <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                                 role="tab" aria-controls="pills-profile"
+                                aria-selected="false">{{card?.name}}</a> </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" 
+                                role="tab" aria-controls="pills-contact" aria-selected="false">
+                                Cashback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" 
+                                role="tab" aria-controls="pills-contact" aria-selected="false">
+                                Virtual card</a>
+                        </li> -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sky_background">
+            <div class="container">
+                <div class="layout-container">
+                    <div class="tab-content" id="pills-tabContent p-3">
+                        <!-- 1st card -->
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                            aria-labelledby="pills-home-tab">
+                            <div class="content">
+                                <p>Find the right Credit Card for you</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="monthly_income">
+                                        <p class="text">Your Monthly Income</p>
+                                        <p class="amount">SAR {{value}}</p>
+                                    </div>
+                                    <div class="slider-margin">
+                                        <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="are_you_from">
+                                        <p>Are you Saudi?</p>
+                                        <div class="custom_radio_button">
+                                            <label class="container">Yes
+                                                <input name="from" type="radio" (change)="radio(1)" [checked]="NationalityID==1">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="container">No
+                                                <input name="from" type="radio" (change)="radio(2)" [checked]="NationalityID==2">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <!-- <span><input type="radio" name="from" id="yes" checked> Yes</span>
+                                            <span class="no_radio"><input type="radio" name="from" id="no"> No</span> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="find_cards_section">
+                                    <button class="btn btn-md find_cards_btn" [disabled]="submit" (click)="search()">SEE CREDIT CARDS</button>
+                                    <!-- <div class="find_cards_content"> -->
+                                    <p>One click to see all credit cards from all Saudi banks</p>
+                                    <p class="more_text">e.g. Alrajhi Bank, Riyad Bank, Alinma bank, Albilad Bank,
+                                        Aljazirah bank,
+                                        NCB,
+                                        ANB and more…</p>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div> <!-- 2nd card -->
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab">
+                            <div class="form-group addinfo"> <label for="exampleFormControlTextarea1">Write additional
+                                    info.</label> <textarea class="form-control" id="exampleFormControlTextarea1"
+                                    rows="3"></textarea> </div>
+                        </div> <!-- 3nd card -->
+                        <div class="tab-pane fade third" id="pills-contact" role="tabpanel"
+                            aria-labelledby="pills-contact-tab">
+                            <div class="form">
+                                <div class="form-group"> <label for="exampleFormControlSelect1">Value
+                                        Type<span>i</span></label> <select class="form-control round"
+                                        id="exampleFormControlSelect1">
+                                        <option class="">United States Dollar</option>
+                                        <option class="amount">Indian Rupees</option>
+                                    </select> </div>
+                                <div class="form-group"> <label>amount</label> <input class="form-control amount"
+                                        placeholder="1500" /> </div> <button class="btn btn-success">Insert</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cards-compare-list" *ngIf="compare" >
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="list-items">
+                    <div>
+                        <img src="../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../../../assets/images/main_images/Group_card_compare.svg" alt="">
+                    </div>
+                    <div>
+                        <button class="btn btn-md add-card-btn">Add a card +</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-md compare-cards-btn" (click)="navigateToCardsCompare()">Compare
+                            cards<span>5</span></button>
+                    </div>
+                    <div>
+                        Reset
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="cards_list">
+            <div class="container">
+                <!-- layout-container -->
+                <div class="">
+                    <div class="filter_part">
+                        <p>Filter</p>
+                        <p>Sort</p>
+                    </div>
+                    <div class="no_fees_and_add_filter">
+                        <div class="dropdown add-filter-dropdown">
+                            <div class="add_filter dropdown-toggle" data-toggle="dropdown">Add filter +</div>
+                            <ul class="dropdown-menu">
+                                    <li (click)="setValues(true,1,'IsCashBack',0,'Cash back')"><a>Cash back</a></li>
+                                    <!-- <li (click)="filterForList(2,true,0)"><a>Rewards</a></li> -->
+                                    <li (click)="setValues(true,3,'Shariah_Compliant',0,'Shariah compliance')"><a>Shariah compliance</a></li>
+                                    <li (click)="setValues(true,4,'IsLoungeAccess',0,'Lounge access')"><a>Lounge access</a></li>
+                                    <li (click)="setValues(true,5,'IsNoAnualFee',0,'No annual fees')"><a>No annual fees</a></li>
+                            </ul>
+                        </div>
+                        <div class="no_fees" *ngFor="let com of complainFilter;let i=index;" (click)="setValues(false,com.id,com.element,i,'')">
+                            <p ><span>X</span> {{com.name}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card custom-card" *ngFor="let val of product;let i =index;">
+                            <div class="card-body">
+                                <div class="visa_main_part">
+                                    <div>
+                                        <h1>{{val?.name}}</h1>
+                                    </div>
+                                    <div class="share_and_compare">
+                                        <div class="user_option">
+                                            <img src="../../../assets/images/main_images/np_share.svg" alt="">
+                                            <span>Share</span>
+                                        </div>
+                                        <div class="user_option" (click)="addCompare()">
+                                            <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                            <span>Add to compare</span>
+                                        </div>
+                                    </div>
+                                    <div class="mobile_flight_text">
+                                        <div class="row text-center ">
+                                            <div class="col-md-4 col-6 refund_not">
+                                                <img src="../../../assets/images/icons/cashback-icon.png" alt="">
+                                                <span>Cash-back</span>
+                                            </div>
+                                            <div class="col-md-4 col-6 refund_not">
+                                                <img src="../../../assets/images/main_images/np_airplane.svg" alt="">
+                                                <span>{{val.id}} lounge access</span>
+                                            </div>
+                                            <div class="col-md-4 col-6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row mt-3 align-items-center">
+                                        <div class="col-md-4">
+                                            <div class="visa_image">
+                                                <img [src]="val?.image?val?.image:'../../assets/images/main_images/visa_dummy_image.png'" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row amount_types">
+                                                <div class="col-md-4 col-6">
+                                                    <div class="amount">
+                                                        <h1>{{val?.annualFee}}</h1> <span>SAR</span>
+                                                    </div>
+                                                    <div class="amount_text">
+                                                        <p>Annual fee for the first year</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="amount">
+                                                        <h1>{{val?.rate}}</h1> <span>%</span>
+                                                    </div>
+                                                    <div class="amount_text">
+                                                        <p>Annual Percentage Rate</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-6">
+                                                    <div class="amount">
+                                                        <h1>{{val?.monthly_Fees}}</h1> <span>SAR</span>
+                                                    </div>
+                                                    <div class="amount_text">
+                                                        <p>Monthly Minimum Payment</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 align-items-center">
+                                        <div class="col-md-4">
+                                            <div>
+                                                <button class="btn btn-md btn-block apply-btn"
+                                                    (click)="applyForCreditCard(val)">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row text-center web_flight_text">
+                                                <div class="col-md-4 refund_not">
+                                                    <img src="../../../assets/images/icons/cashback-icon.png"
+                                                        alt="">
+                                                    <span>Cash-back</span>
+                                                </div>
+                                                <div class="col-md-4 refund_not" *ngIf="val?.isLoungeAccess">
+                                                    <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                        alt="">
+                                                    <span>NA lounge access</span>
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                            <div class="share_and_compare_mobile">
+                                                <div class=" row">
+                                                    <div class="user_option">
+                                                        <img src="../../../assets/images/main_images/np_share.svg"
+                                                            alt="">
+                                                        <span>Share</span>
+                                                    </div>
+                                                    <div class="user_option">
+                                                        <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                                        <span>Add to compare</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="goto_details">
+                                            <div>
+                                                <div *ngIf="showCardDetailsFlag!=i"  (click)="showCardDetails(i+'')"
+                                               >
+                                                    <img src="../../../assets/images/footer-images/up-arrow.svg" alt="">
+                                                    <span>Card Details</span>
+                                                </div>
+                                                <div *ngIf="showCardDetailsFlag==i"  (click)="showCardDetails(i+'-')">
+                                                    <img src="../../../assets/images/main_images/Group_downarrow.svg"
+                                                        alt="">
+                                                    <span>Hide Details</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <img src="../../../assets/images/main_images/Group_instant_approval.svg"
+                                                    alt="">
+                                                <span>Instant approval</span>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="showCardDetailsFlag==i">
+                                            <div class="card_details_starts">
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-12 mt-3">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4 col-4">
+                                                                <div class="inner-block-header">
+                                                                    <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                        alt="">
+                                                                    <span>Fees</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Recurring Annual </p>
+                                                                            <span>SAR NA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Annual</p>
+                                                                            <span>SAR {{val?.annualFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Supplementary card</p>
+                                                                            <span>SAR {{val?.supplementaryCardFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Card Replacement</p>
+                                                                            <span>SAR {{val?.cardReplacementFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Cash Withdrawal</p>
+                                                                            <span>SAR {{val?.cashWithdrawalFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Late Payment</p>
+                                                                            <span>SAR {{val?.latePaymentFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Collection</p>
+                                                                            <span>SAR {{val?.collectionFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Foreign Exchange Conversion</p>
+                                                                            <span>{{val?.foreignExchangeConversionFee}}%</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Cheque Returned</p>
+                                                                            <span>SAR {{val?.chequeReturnedFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Statement Request</p>
+                                                                            <span>SAR {{val?.statementRequestFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Refund Of Credit Balance</p>
+                                                                            <span>SAR {{val?.refundOfCreditBalanceFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Direct Debit Rejection</p>
+                                                                            <span>SAR {{val?.directDebitRejectionFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Dispute Handling</p>
+                                                                            <span>SAR {{val?.disputeHandlingFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-4">
+                                                                        <div class="fees-block">
+                                                                            <p>Overseas Payment </p>
+                                                                            <span>SAR {{val?.overseasPaymentFee}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-12 mt-3" *ngIf="val?.protections">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4 col-4">
+                                                                <div class="inner-block-header">
+                                                                    <img src="../../../assets/images/icons/protection-icon.png"
+                                                                        alt="">
+                                                                    <span>Protection</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <ul class="card-details-list">
+                                                                    <li *ngFor="let point of val?.protections">
+                                                                        <span
+                                                                            class="material-icons custom_check">check</span>
+                                                                        <span>{{point}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-12 mt-3" *ngIf="val?.travels">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4 col-4">
+                                                                <div class="inner-block-header">
+                                                                    <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                        alt="">
+                                                                    <span>Travel</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <ul class="card-details-list">
+                                                                    <li *ngFor="let point of val?.travels">
+                                                                        <span
+                                                                            class="material-icons custom_check">check</span>
+                                                                        <span>{{point}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-12 mt-3" *ngIf="val?.rewardsPrograms">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4 col-4">
+                                                                <div class="inner-block-header">
+                                                                    <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                        alt="">
+                                                                    <span>Reward Programs</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <ul class="card-details-list">
+                                                                    <li *ngFor="let point of val?.rewardsPrograms">
+                                                                        <span
+                                                                            class="material-icons custom_check">check</span>
+                                                                        <span>{{point}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-12 mt-3" *ngIf="val?.listOthers">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-md-4 col-4">
+                                                                <div class="inner-block-header">
+                                                                    <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                        alt="">
+                                                                    <span>Others</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 col-8">
+                                                                <ul class="card-details-list">
+                                                                    <li *ngFor="let point of val?.listOthers">
+                                                                        <span
+                                                                            class="material-icons custom_check">check</span>
+                                                                        <span>{{point}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div *ngIf="product?.length==0" class="noDataFound">
+                        {{finding ? "Searching....": "No Finance Product Found For Given Data"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- </section> -->

@@ -1,0 +1,133 @@
+
+@import "../../../variable_styles.scss";
+
+#cards_compare {
+    margin: 100px 0px;
+    @include mobile {
+        margin: 20px 0px;
+    }
+    .compare-heading {
+        margin-bottom: 20px;
+        h3 {
+            font-weight: 600;
+            font-size: 37px;
+        }
+    }
+    .col-md-3 {
+        padding: 0px;
+    }
+    .table {
+        margin-bottom: 0px;
+        tr {
+            border-bottom: 1px solid #ccc;
+        }
+    }
+    .table-responsive {
+        height: 100%;
+    }
+    .add-card-btn {
+        border: 1px solid #000;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+}
+
+.apply-now-btn {
+    background-color: $primary_green;
+    color: #fff;
+    font-weight: 500;
+    // margin-bottom: 20px;
+}
+.card-heading {
+    h4 {
+        font-size: 20px;
+        font-weight: 600;
+        max-width: 140px;
+        margin: auto;
+    }
+}
+.bank-img {
+    img {
+        max-width: 90px;
+    }
+}
+.card-apply-btn {
+    margin-bottom: 20px;
+    button {
+        width: 180px;
+        margin: auto;
+    }
+}
+.card-content {
+    padding: 10px;
+    .custom_check {
+        color: $primary_green;
+        margin-right: 6px;
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    p {
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    span {
+        font-size: 13px;
+    }
+    ul {
+        padding-left: 0px;
+        li {
+            list-style-type: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+        }
+    }
+}
+
+/* #cards_compare {
+    margin-top: 30px;
+    padding: 30px 0px;
+    margin-bottom: 150px;
+    .custom-table {
+        border-bottom: solid 1px #ccc;
+        thead {
+            background-color: #000;
+            color: #01DBFF;
+            th {
+                font-weight: 500;
+                color: #01DBFF;
+                text-align: center;
+            }
+        }
+        tbody {
+            td {
+                vertical-align: middle;
+                text-align: center;
+                .custom_check {
+                    color: $primary_green;
+                }
+            }
+            .compare_card_td {
+                max-width: 200px;
+                text-align: left;
+                h4 {
+                    margin-bottom: 0px;
+                }
+                .bank_image {
+                    img {
+                        max-width: 100px;
+                    }
+                }
+                .card_image {
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+} */

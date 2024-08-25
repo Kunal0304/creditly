@@ -1,0 +1,172 @@
+// @import "../../../variable_styles.scss";
+@import "../../../../variable_styles.scss";
+
+#login_page {
+  position: relative;
+  .background_shapes {
+
+    .register-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      .top_background_shape {
+        clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%);
+        background: #fff;
+        height: 100px;
+      }
+      .bottom_background_shape {
+        clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%);
+        background: #000;
+        min-height: 82.6vh;
+        max-height: 85vh;
+        position: relative;
+      }
+    }
+  }
+  .register-wrapper {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    .register-left-content {
+      padding: 20px 0;
+      .app-title {
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          color: #000;
+          font-family: "Cairo", sans-serif;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .register-content {
+        margin-bottom: 25px;
+        p {
+          margin-bottom: 2px;
+          color: $primary_green;
+          font-size: 22px;
+          font-family: "Cairo", sans-serif;
+          font-weight: 500;
+          margin-left: 10px;
+          span {
+            border-left: 1px solid;
+            font-size: 14px;
+            padding-left: 4px;
+            padding-right: 6px;
+            font-family: "Material Icons" !important;
+          }
+        }
+        small {
+          line-height: 14px;
+          display: block;
+          font-size: 70%;
+          color: #777d90;
+          font-family: "Cairo", sans-serif;
+          font-weight: 500;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  
+  .failure_card {
+    width: 450px;
+    margin: 0 auto;
+    cursor: pointer;
+    // display: flex;
+    // align-items: center;
+    .custom-card {
+      box-shadow: 0px 0px 26px #00000029;
+      border: none;
+      .card-body{
+          padding: 2rem;
+      }
+      .main_heading {
+        margin: 0px 0px;
+        padding: 20px 0px;
+        text-align: center;
+        font-family: "Cairo", sans-serif;
+        h5{
+          font-weight: 600; 
+          font-size: 18px; 
+        }
+      }
+    }
+  }
+  .creditcard-row{
+      background-color: #F7FBFF;
+      padding: 8px 0px;
+    
+      .credit-title{
+          margin: 0px;
+       .cc{
+           font-size: 10px;
+           margin: 0px;
+           font-weight: 600;
+       }   
+      .visa-txt{
+          font-size: 18px;
+          line-height: 1.1;
+          margin: 0.2rem 0 1.2rem 0;
+      }
+    }
+      .disclaimer_text {
+        
+        p {
+          font-size: 11px;
+          margin: 0px;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+  }
+  .go_home{
+      color: #09BC8A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+  }
+  .terms_conditions {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: "Cairo", sans-serif;
+    a {
+      color: #01dbff;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+}
+@media screen and (max-width: 800px){
+  #login_page .failure_card{
+    width: 390px;
+  }
+  #login_page .background_shapes .register-container .top_background_shape{
+    height: 25vh;
+  }
+}
+@media screen and (max-width: 575px){
+  #login_page .failure_card{
+    width: 290px;
+    .custom-card{
+      .card-body{
+        padding: 1rem;
+      }
+    }
+  }
+  #login_page .background_shapes .register-container .top_background_shape{
+    height: 20vh;
+  }
+  #login_page .background_shapes .register-container .bottom_background_shape{
+    clip-path: polygon(0% 20%, 100% 60%, 100% 100%, 0% 100%);
+  }
+}

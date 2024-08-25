@@ -1,0 +1,102 @@
+@import "../../../../variable_styles.scss";
+
+.custom-card {
+    box-shadow: 0px 0px 20px #00000014;
+    border: none;
+    border-radius: 6px;
+    margin: 20px 0px 50px 0px;
+    .visa_main_part {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        font-size: 28px;
+      }
+      .share_and_compare {
+        display: flex;
+        .user_option {
+
+          img {
+            margin-right: 6px;
+          }
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .visa_image {
+      img {
+        max-width: 198px;
+        // margin: 10px auto;
+        height: 90px;
+        display: flex;
+      }
+    }
+
+    .amount_types {
+      .col-md-4 {
+        text-align: center;
+
+        .amount {
+          display: flex;
+          align-items: center;
+          // justify-content: center;
+          max-width: 130px;
+          margin: auto;
+        }
+
+        span {
+          margin-left: 18px;
+        }
+
+        .amount_text {
+          max-width: 130px;
+          margin: auto;
+          font-size: 14px;
+          text-align: left;
+        }
+      }
+    }
+
+    .apply-btn {
+      background-color: $primary_green;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .refund_not {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        margin-bottom: 0px;
+        font-size: 13px;
+      }
+
+      span {
+        margin-left: 14px;
+      }
+
+      .amount {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      img {
+        max-width: 20px;
+        // margin-right: 7px;
+      }
+    }
+    .goto_details {
+      align-items: center;
+      display: inline-flex;
+      span {
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+  }
+  }

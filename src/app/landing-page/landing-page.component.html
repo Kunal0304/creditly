@@ -1,0 +1,268 @@
+<!-- <p>landing-page works!</p> -->
+
+
+<section id="cards_search_landing_page">
+    <div>
+        <div>
+            <div class="container">
+                <p class="looking_for">LOOKING FOR</p>
+                <!-- nav options -->
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" id="pills-home-tab" data-toggle="pill"
+                            href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Credit
+                            cards</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                            href="#pills-profile" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Personal finance</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-contact-tab" data-toggle="pill"
+                            href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Auto
+                            lease</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                            href="#pills-profile" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Mortgage</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-contact-tab" data-toggle="pill"
+                            href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                            Bank account</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sky_background">
+            <div class="container">
+                <div class="tab-content" id="pills-tabContent p-3">
+                    <!-- 1st card -->
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="content">
+                            <p>Find the right Credit Card for you</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="monthly_income">
+                                    <p class="text">Your Monthly Income</p>
+                                    <p class="amount">SAR 25,000</p>
+                                </div>
+                                <div class="slider-margin"> 
+                                    <ngx-slider class="custom-slider" [(value)]="value" [options]="options"></ngx-slider>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="are_you_from">
+                                    <p>Are you Saudi?</p>
+                                    <div class="custom_radio_button">
+                                        <span><input type="radio" name="from" id="yes"> Yes</span>
+                                        <span class="no_radio"><input type="radio" name="from" id="no"> No</span>
+                                    </div>
+                                    <!-- <div class="custom_radio_button">
+                                        <label class="container">One
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Two
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="find_cards_section">
+                                <button class="btn btn-md find_cards_btn" (click)="gotoCardsList()">FIND CREDIT
+                                    CARDS</button>
+                                <!-- <div class="find_cards_content"> -->
+                                <p>One click to see all credit cards from all Saudi banks</p>
+                                <p class="more_text">e.g. Alrajhi Bank, Riyad Bank, Alinma bank, Albilad Bank,
+                                    Aljazirah bank,
+                                    NCB,
+                                    ANB and more…</p>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div> <!-- 2nd card -->
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form-group addinfo"> <label for="exampleFormControlTextarea1">Write additional
+                                info.</label> <textarea class="form-control" id="exampleFormControlTextarea1"
+                                rows="3"></textarea> </div>
+                    </div> <!-- 3nd card -->
+                    <div class="tab-pane fade third" id="pills-contact" role="tabpanel"
+                        aria-labelledby="pills-contact-tab">
+                        <div class="form">
+                            <div class="form-group"> <label for="exampleFormControlSelect1">Value
+                                    Type<span>i</span></label> <select class="form-control round"
+                                    id="exampleFormControlSelect1">
+                                    <option class="">United States Dollar</option>
+                                    <option class="amount">Indian Rupees</option>
+                                </select> </div>
+                            <div class="form-group"> <label>amount</label> <input class="form-control amount"
+                                    placeholder="1500" /> </div> <button class="btn btn-success">Insert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="square_bg">
+            <div class="container custom_container">
+                <div class="disclaimer_text">
+                    <p class="title">Hard made easy</p>
+                    <p class="content">Find best financial products from all Saudi Arabia banks, based on your credit
+                        score in seconds</p>
+                </div>
+                <div class="main_three_blocks">
+                    <div class="">
+                        <div class="register_sections">
+                            <div>
+                                <img src="../../../assets/images/main_images/Group_register.svg" alt="">
+                            </div>
+                            <div>
+                                <p class="title">Register</p>
+                            </div>
+                            <div>
+                                <p class="content">Create your profile in seconds, your data is securely fetched from
+                                    Absher, XYZ and CCC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="register_sections">
+                            <div>
+                                <img src="../../assets/images/main_images/browse_image.png" alt="">
+                            </div>
+                            <div>
+                                <p class="title">Browse</p>
+                            </div>
+                            <div>
+                                <p class="content">Navigate across different banking products and see the products you
+                                    are eligible for!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="register_sections">
+                            <div>
+                                <img src="../../assets/images/main_images/apply_image.png" alt="">
+                            </div>
+                            <div>
+                                <p class="title">Apply</p>
+                            </div>
+                            <div>
+                                <p class="content">Select the product you like and apply for it in seconds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="get_most">
+                    <div>
+                        <h6>Get the most from creditly</h6>
+                    </div>
+                    <div>
+                        <p>Register and check products you are eligible for based on your scoring across Saudi banks</p>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 text-center">
+                    <img src="../../assets/images/main_images/chess_shape_image.png" alt="">
+                </div> -->
+            </div>
+        </div>
+        <div class="triangle_bg">
+            <div class="container">
+                <div class="mt-4 text-center">
+                    <img src="../../assets/images/main_images/chess_shape_image.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="register_section">
+            <div class="text-center">
+                <button class="btn btn-md register_now_btn">Register Now</button>
+                <p>Takes less than a minute, and completely FREE!</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="why_creditly">
+            <div class="container">
+                <div class="disclaimer_text main_topic">
+                    <p class="title one">Why Creditly</p>
+                </div>
+                <div class="four_blocks">
+                    <div class="disclaimer_text">
+                        <p class="title"> <span class="material-icons">check</span> Secure</p>
+                        <p class="content">We invest in the best security practices and resources to ensure the highest
+                            level of security</p>
+                    </div>
+                    <div class="disclaimer_text">
+                        <p class="title"><span class="material-icons">check</span> Trusted</p>
+                        <p class="content">With the supervision of SAMA, we are constantly working for best quality and
+                            performance</p>
+                    </div>
+                    <div class="disclaimer_text">
+                        <p class="title"><span class="material-icons">check</span> Private</p>
+                        <p class="content">We won’t share your personal information with third parties in any
+                            circumstances</p>
+                    </div>
+                    <div class="disclaimer_text">
+                        <p class="title"><span class="material-icons">check</span> FREE</p>
+                        <p class="content">We invest in the best security practices and resources to ensure the highest
+                            level of security</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="our_partners">
+            <div class="container">
+                <div class="disclaimer_text">
+                    <p class="title">Our partners</p>
+                    <!-- <p class="content">We invest in the best security practices and resources to ensure the highest level of security</p> -->
+                </div>
+                <div>
+                    <div class="list_bank_images">
+                        <div class="images_position mb-3">
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/bank_almad.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/bank_almad-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/meem_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/meem_bank-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/ncb_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/ncb_bank-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/banque_saudi_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/banque_saudi_bank-removebg-preview.png" alt="">
+                            </div>
+                        </div>
+                        <div class="images_position">
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/nyad_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/nyad_bank-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/saab_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/saab_bank-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <!-- <img src="../../assets/images/main_images/saudi_investment_bank.png" alt=""> -->
+                                <img src="../../assets/images/main_images/transperant_images/saudi_investment_bank-removebg-preview.png" alt="">
+                            </div>
+                            <div class="">
+                                <img src="../../assets/images/main_images/anb_bank.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div>
+                                <img src="../../assets/images/main_images/transperant_images/aliazira_bank-removebg-preview.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

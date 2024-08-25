@@ -1,0 +1,38 @@
+<div class="container">
+    <p class="f-16" *ngIf="item=='true'"><b>Bank Accounts Details</b></p>
+    <div class="row">
+        <div class="col-md-12">
+            <form *ngIf="formGroup?.controls" [formGroup]="formGroup">
+            <div class="row">
+                <div class="col-md-5 col-6 details-row mb-3">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Your salary transfer bank</label>
+                                <div class="form-control" >{{bankType}}
+                                    <select name="cars" id="cars"  formControlName="bankAccountID" (change)="filter($event)">
+                                        <option *ngFor="let res of banks;let i=index;" [value]="res.id">{{res.name}}</option>
+                                      </select>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 col-6 details-row">
+                    <div>
+                            <div class="form-group">
+                                <label class="form-label" for="">IBAN</label>
+                                <input type="text" class="form-control" placeholder="Enter IBAN" formControlName="iBAN"
+                                [ngClass]="{
+                                  validationClass:
+                                    loginFormValidationFlag &&
+                                    formGroup.controls['iBAN'].errors
+                                }">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center ml-3 updateButton" *ngIf="item!='true'">
+                <button class="btn btn-sm cc-btn-primary" [disabled]="submit" id="updateProfile" (click)="update()"  >Update</button>
+              </div>
+        </form>
+        </div>

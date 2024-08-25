@@ -1,0 +1,473 @@
+<!-- <p>applycreditcard works!</p> -->
+
+
+<!-- <section class="global_main_section"> -->
+
+    <section class="page_variable_section d-none">
+        <div class="header_starts"></div>
+        <div class="container">
+            <div class="variable_text_image">
+                <div class="">
+                    <div class="header_main_text">
+                        <h1>Find the credit card that suits your needs from all Saudi Arabia banks</h1>
+                    </div>
+                    <div class="header_main_image">
+                        <img src="../../../assets/images/main_images/cards_list_header_image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="layerMask">
+            <div class="backgroundMask">
+                <div class="background">
+                    <div class="own-bg"></div>
+                </div>
+            </div>
+            <div class="container mainPart-container">
+                <div class="layout-container">
+                    <div class="layout-content">
+                        <!-- column-layout -->
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="header_main_text">
+                                        <h1>Find the credit card that suits your needs from all Saudi Arabia banks</h1>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="header_main_image">
+                                        <img src="../../../assets/images/main_images/cards_list_header_image.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <div class="cards_list">
+            <div class="container">
+                <h3>You are applying to </h3>
+                <div>
+                    <div class="card custom-card" *ngFor="let val of product">
+                        <div class="card-body">
+                            <div class="visa_main_part">
+                                <div>
+                                    <h1>{{val.name}}</h1>
+                                </div>
+                                <div class="share_and_compare">
+                                    <div class="user_option">
+                                        <img src="../../../assets/images/main_images/np_share.svg" alt="">
+                                        <span>Share</span>
+                                    </div>
+                                    <div class="user_option">
+                                        <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                        <span>Add to compare</span>
+                                    </div>
+                                </div>
+                                <div class="mobile_flight_text">
+                                    <div class="row text-center ">
+                                        <div class="col-md-4 col-6 refund_not">
+                                            <img src="../../../assets/images/icons/cashback-icon.png" alt="">
+                                            <span>Cash-back</span>
+                                        </div>
+                                        <div class="col-md-4 col-6 refund_not">
+                                            <img src="../../../assets/images/main_images/np_airplane.svg" alt="">
+                                            <span>{{val.id}} lounge access</span>
+                                        </div>
+                                        <div class="col-md-4 col-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                        <div class="visa_image">
+                                            <img [src]="val?.image?val?.image:'../../assets/images/main_images/visa_dummy_image.png'" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row amount_types">
+                                            <div class="col-md-4 col-6">
+                                                <div class="amount">
+                                                    <h1>{{val?.feesAnnualFee}}</h1> <span>SAR</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual fee for the first year</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-6">
+                                                <div class="amount">
+                                                    <h1>{{val?.rate}}</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Annual Percentage Rate</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-6">
+                                                <div class="amount">
+                                                    <h1>5</h1> <span>%</span>
+                                                </div>
+                                                <div class="amount_text">
+                                                    <p>Monthly Minimum Payment</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row text-center web_flight_text">
+                                            <div class="col-md-4 refund_not">
+                                                <img src="../../../assets/images/icons/cashback-icon.png" alt="">
+                                                <span>Cash-back</span>
+                                            </div>
+                                            <div class="col-md-4 refund_not" *ngIf="val?.isLoungeAccess">
+                                                <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                    alt="">
+                                                <span>240 lounge access</span>
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                        <div class="share_and_compare_mobile">
+                                            <div class=" row">
+                                                <div class="user_option">
+                                                    <img src="../../../assets/images/main_images/np_share.svg"
+                                                        alt="">
+                                                    <span>Share</span>
+                                                </div>
+                                                <div class="user_option">
+                                                    <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                                    <span>Add to compare</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <div class="goto_details">
+                                        <div>
+                                            <div *ngIf="!showCardDetailsFlag">
+                                                <img src="../../../assets/images/footer-images/up-arrow.svg" alt="">
+                                                <span (click)="showCardDetails()">Card Details</span>
+                                            </div>
+                                            <div *ngIf="showCardDetailsFlag">
+                                                <img src="../../../assets/images/main_images/Group_downarrow.svg"
+                                                    alt="">
+                                                <span (click)="showCardDetails()">Hide Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="showCardDetailsFlag">
+                                        <div class="card_details_starts">
+                                            <div class="row ">
+                                                <div class="col-md-12 col-12 mt-3">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 col-4">
+                                                            <div class="inner-block-header">
+                                                                <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                    alt="">
+                                                                <span>Fees</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-8">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Recurring Annual </p>
+                                                                        <span>SAR 210</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Annual</p>
+                                                                        <span>SAR {{val?.annualFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Supplementary card</p>
+                                                                        <span>SAR {{val?.supplementaryCardFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Card Replacement</p>
+                                                                        <span>SAR {{val?.cardReplacementFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Cash Withdrawal</p>
+                                                                        <span>SAR {{val?.cashWithdrawalFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Late Payment</p>
+                                                                        <span>SAR {{val?.latePaymentFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Collection</p>
+                                                                        <span>SAR {{val?.collectionFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Foreign Exchange Conversion</p>
+                                                                        <span>{{val?.foreignExchangeConversionFee}}%</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Cheque Returned</p>
+                                                                        <span>SAR {{val?.chequeReturnedFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Statement Request</p>
+                                                                        <span>SAR {{val?.statementRequestFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Refund Of Credit Balance</p>
+                                                                        <span>SAR {{val?.refundOfCreditBalanceFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Direct Debit Rejection</p>
+                                                                        <span>SAR {{val?.directDebitRejectionFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Dispute Handling</p>
+                                                                        <span>SAR {{val?.disputeHandlingFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-4">
+                                                                    <div class="fees-block">
+                                                                        <p>Overseas Payment </p>
+                                                                        <span>SAR {{val?.overseasPaymentFee}}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12 mt-3" *ngIf="val?.protections">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 col-4">
+                                                            <div class="inner-block-header">
+                                                                <img src="../../../assets/images/icons/protection-icon.png"
+                                                                    alt="">
+                                                                <span>Protection</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-8">
+                                                            <ul class="card-details-list">
+                                                                <li *ngFor="let point of val?.protections">
+                                                                    <span
+                                                                        class="material-icons custom_check">check</span>
+                                                                    <span>{{point}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12 mt-3" *ngIf="val?.travels">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 col-4">
+                                                            <div class="inner-block-header">
+                                                                <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                    alt="">
+                                                                <span>Travel</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-8">
+                                                            <ul class="card-details-list">
+                                                                <li *ngFor="let point of val?.travels">
+                                                                    <span
+                                                                        class="material-icons custom_check">check</span>
+                                                                    <span>{{point}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12 mt-3" *ngIf="val?.rewardsPrograms">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 col-4">
+                                                            <div class="inner-block-header">
+                                                                <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                    alt="">
+                                                                <span>Reward Programs</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-8">
+                                                            <ul class="card-details-list">
+                                                                <li *ngFor="let point of val?.rewardsPrograms">
+                                                                    <span
+                                                                        class="material-icons custom_check">check</span>
+                                                                    <span>{{point}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12 mt-3" *ngIf="val?.listOthers">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 col-4">
+                                                            <div class="inner-block-header">
+                                                                <img src="../../../assets/images/main_images/np_airplane.svg"
+                                                                    alt="">
+                                                                <span>Others</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-8">
+                                                            <ul class="card-details-list">
+                                                                <li *ngFor="let point of val?.listOthers">
+                                                                    <span
+                                                                        class="material-icons custom_check">check</span>
+                                                                    <span>{{point}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-row">
+                <div class="container">
+                    <p class="text-c">Complete your profile</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="accordion bank-ac-accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <a class="accordion-button" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <span><strong>Personal details</strong></span>
+                                            <span><img src="assets/images/main_images/np_arrow.png"
+                                                    width="12px" /></span>
+                                        </a>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="accordion-body px-4 py-4">
+                                            <app-personal-details item="true"></app-personal-details>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <a class="accordion-button collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <span><strong>Contact</strong></span>
+                                            <span><img src="assets/images/main_images/np_arrow.png"
+                                                    width="12px" /></span>
+                                        </a>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="accordion-body px-4 py-4">
+                                            <app-contact-info item="true"></app-contact-info>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <a class="accordion-button collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <span><strong>Employment details</strong></span>
+                                            <span><img src="assets/images/main_images/np_arrow.png"
+                                                    width="12px" /></span>
+                                        </a>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="accordion-body px-4 py-4">
+                                            <app-employment-details item="true"></app-employment-details>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <a class="accordion-button collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour">
+                                            <span><strong>Financial details</strong></span>
+                                            <span><img src="assets/images/main_images/np_arrow.png"
+                                                    width="12px" /></span>
+                                        </a>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-parent="#accordionExample">
+                                        <div class="accordion-body px-4 py-4">
+                                            <app-financial-details item="true"></app-financial-details>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <a class="accordion-button collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseFive" aria-expanded="false"
+                                            aria-controls="collapseFive">
+                                            <span><strong>Bank account</strong></span>
+                                            <span><img src="assets/images/main_images/np_arrow.png"
+                                                    width="12px" /></span>
+                                        </a>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-parent="#accordionExample">
+                                        <div class="accordion-body px-4 py-4">
+                                            <app-bank-account-details item="true"></app-bank-account-details>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12 text-center mt-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            I agree on the <u><strong>terms and conditions</strong></u>
+                                        </label>
+                                    </div>
+                                    <div class="mt-2">
+                                        <button class="btn btn-md apply-btn" (click)="apply()">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- </section> -->

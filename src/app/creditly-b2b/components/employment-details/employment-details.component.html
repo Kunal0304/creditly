@@ -1,0 +1,165 @@
+<div class="container">
+    <form *ngIf="formGroup?.controls" [formGroup]="formGroup">
+    <div class="row">
+        <div class="col-md-5 col-6 details-row mb-2">
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="">Basic salary</label>
+                        <input type="text" class="form-control"  (change)="UserIncomeStrategy()" placeholder="Enter mobile number" value="SAR 17,345.55">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="form-label" for="">Other allowances</label>
+                    <input type="number" class="form-control" (change)="UserIncomeStrategy()" placeholder="Enter mobile number" formControlName="otherAllowences"
+                    [ngClass]="{
+                      validationClass:
+                        loginFormValidationFlag &&
+                        formGroup.controls['otherAllowences'].errors
+                    }">
+                </div>
+            </div>
+            <div>
+                <p class="">Net salary</p>
+                <p>{{!calci?formGroup.value.netSalary:"calcualting..."}}</p>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="">Other income</label>
+                        <input type="number" class="form-control" placeholder="Enter Other income"formControlName="monthlyExtraIncome"
+                        [ngClass]="{
+                          validationClass:
+                            loginFormValidationFlag &&
+                            formGroup.controls['monthlyExtraIncome'].errors
+                        }" >
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5 col-6 details-row mb-2">
+            <div>
+                    <div class="form-group">
+                        <label class="form-label" for="">Housing allowances</label>
+                        <input type="number" class="form-control"(change)="UserIncomeStrategy()" placeholder="Enter Housing allowances" formControlName="housingAllowance"
+                        [ngClass]="{
+                          validationClass:
+                            loginFormValidationFlag &&
+                            formGroup.controls['housingAllowance'].errors
+                        }">
+                    </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="form-label" for="">Tranportation allowances</label>
+                    <input type="number" class="form-control" (change)="UserIncomeStrategy()" placeholder="Enter Tranportation allowances" formControlName="transportationAllowance"
+                    [ngClass]="{
+                      validationClass:
+                        loginFormValidationFlag &&
+                        formGroup.controls['transportationAllowance'].errors
+                    }">
+                </div>
+        </div>
+            <div>
+                <p class="opacity">Gross salary</p>
+                <p><b>SAR {{!calci?formGroup.value.grossSalary:"calcualting..."}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Primary source of income</p>
+                <div class="form-control" [ngClass]="{
+                    validationClass:
+                      loginFormValidationFlag &&
+                      formGroup.controls['sourceOfIncomeID'].errors
+                  }">{{SourceIType}}
+                    <select name="cars" id="cars"  formControlName="sourceOfIncomeID" (change)="filterSource($event)" >
+                        <option *ngFor="let res of sourceOfIncomes;let i=index;" [value]="res.id">{{res.name}}</option>
+                      </select>
+                </div>
+            </div>
+
+            <div>
+                    <div class="form-group">
+                        <label class="form-label" for="">Source of other income</label>
+                        <div class="form-control"[ngClass]="{
+                            validationClass:
+                              loginFormValidationFlag &&
+                              formGroup.controls['otherSourceOfIncomeID'].errors
+                          }" >{{otherSourceIType}}
+                            <select name="cars" id="cars"   formControlName="otherSourceOfIncomeID" (change)="otherfilterSource($event)" >
+                                <option *ngFor="let res of sourceOfIncomes;let i=index;" [value]="res.id">{{res.name}}</option>
+                              </select>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <p class="mb-2"><b>Employment details</b></p>
+        </div>
+        <div class="col-md-6 col-6 details-row ">
+            <div class="form-group">
+                <p class="opacity">Work sector</p>
+                <div class="form-control"[ngClass]="{
+                    validationClass:
+                      loginFormValidationFlag &&
+                      formGroup.controls['workTypeID'].errors
+                  }" >{{workTypesValue}}
+                <select name="cars" id="cars" formControlName="workTypeID" (change)="filter($event)">
+                    <option *ngFor="let res of workTypes;let i=index;" [value]="res.id">{{res.name}}</option>
+                  </select>
+                </div>
+            </div>
+            <!-- <div class="form-group"  *ngIf="showOccupationFalg">
+                <p class="opacity">Rank</p>
+                <input type="text" name="" id="" class="form-control" value="2">
+            </div> -->
+            <div class="form-group"  *ngIf="showOccupationFalg">
+                <p class="opacity">Are you Pilot?</p>
+                <div class="custom_radio_button">
+                    <label class="container">Yes
+                        <input name="from" type="radio" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">No
+                        <input name="from" type="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <!-- <span><input type="radio" name="from" id="yes" checked> Yes</span>
+                    <span class="no_radio"><input type="radio" name="from" id="no">
+                        No</span> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-6 details-row ">
+            <div>
+                <p class="opacity">Total Months of service</p>
+                <p><b>{{profileDate?.userPersonalEmployement?.workingMonths}}</b></p>
+            </div>
+            <div class="form-group">
+                <p class="opacity">Employer Name</p>
+                <p><b>{{profileDate?.userPersonalEmployement?.fullName}}</b></p>
+            </div>
+            <div class="col-md-6 details-row mb-4">
+                <div class="form-group" *ngIf="showOccupationFalg">
+                    <p class="opacity">Occupation</p>
+                    <input type="text" class="form-control" placeholder="Enter Occupation" formControlName="occupation"
+                    [ngClass]="{
+                      validationClass:
+                        loginFormValidationFlag &&
+                        formGroup.controls['occupation'].errors
+                    }">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center ml-3" *ngIf="item!='true'" >
+        <button class="btn btn-sm cc-btn-primary" [disabled]="submit" id="updateProfile" (click)="update()"  >Update</button>
+      </div>
+</form>
+</div>

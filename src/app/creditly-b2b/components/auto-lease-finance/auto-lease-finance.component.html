@@ -1,0 +1,452 @@
+<div class="auto-lease-finance-section">
+
+    <div class="filter-section f-s">
+        <form [formGroup]="autoLeaseFinanceForm">
+            <div class="container">
+                <div class="row py-3 mb-3">
+                    <div class="col-md-3">
+                        <p>Im interested in</p>
+                    </div>
+                    <div class="col-md-9 radio-tabs h-25">
+                        <input type="radio" id="radio1" name="radios" value="all" checked>
+                        <label for="radio1">All</label>
+                        <input type="radio" id="radio2" name="radios" value="false">
+                        <label for="radio2">50% 50%</label>
+                        <input type="radio" id="radio3" name="radios" value="true">
+                        <label for="radio3">Auto-lease</label>
+                        <input type="radio" id="radio4" name="radios" value="true">
+                        <label for="radio4">Second hand car financing</label>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>Set your Auto-lease details</p>
+                </div>
+                <div class="row filter-row">
+                    <div class="col-md-6">
+                        <div class="monthly_income">
+                            <p class="text">Your Monthly Income</p>
+                            <p class="amount"><b>SAR 25,000</b></p>
+                        </div>
+                        <div class="slider-margin">
+                            <!-- [(value)]="value" -->
+                            <ngx-slider formControlName="netSalary" [options]="options"></ngx-slider>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="monthly_income">
+                            <p class="text">Finance amount</p>
+                            <p class="amount"><b>SAR 25,000</b></p>
+                        </div>
+                        <div class="slider-margin">
+                            <!-- [(value)]="value" -->
+                            <ngx-slider formControlName="financeAmount" [options]="options"></ngx-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 filter-row">
+                    <div class="col-md-4">
+                        <div class="monthly_income">
+                            <p class="text">Finance period</p>
+                            <p class="amount"><b>Year 3</b></p>
+                        </div>
+                        <div class="slider-margin">
+                            <!-- [(value)]="value" -->
+                            <ngx-slider formControlName="financePeriod" [options]="options"></ngx-slider>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="monthly_income">
+                            <p class="text">Downpayment</p>
+                            <p class="amount"><b>SAR 50,000</b></p>
+                        </div>
+                        <div class="slider-margin">
+                            <!-- [(value)]="value" -->
+                            <ngx-slider formControlName="downPayment" [options]="options"></ngx-slider>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="monthly_income">
+                            <p class="text">Ballon payment</p>
+                            <p class="amount"><b>SAR 50,000</b></p>
+                        </div>
+                        <div class="slider-margin">
+                            <!-- [(value)]="value" -->
+                            <ngx-slider formControlName="lastPayment" [options]="options"></ngx-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-md-12">
+                    <div class="below_slider_part row">
+                        <div class="are_you_from col-md-4 text-left">
+                            <p>Are you Saudi?</p>
+                            <div class="custom_radio_button">
+                                <label class="container">Yes
+                                    <input (click)="handlerFromSaudi(1)" name="areYouSaudi" type="radio" checked="checked" >
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">No
+                                    <input (click)="handlerFromSaudi(2)" name="areYouSaudi" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- <span><input class="" type="radio" name="from" id="yes"> Yes</span>&nbsp;
+                            <span class="no_radio"><input class="" type="radio" name="from" id="no"> No</span> -->
+                            </div>
+                        </div>
+                        <div class="are_you_from col-md-4 text-center">
+                            <p>Employer type</p>
+                            <div class="custom_select_input">
+                                <select fomrControlName="workType" name="" id="" class="select-input">
+                                     <option value=null>Select Work Type</option>
+                                    <option *ngFor="let item of workTypesList" value={{item.id}}> {{item.name}} </option>
+                                    <!-- <option value="Private">Private</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="are_you_from col-md-4 text-center">
+                            <p>Salary transfer?</p>
+                            <div class="custom_radio_button last_custom_radio_btn">
+                                <label class="container">Yes
+                                    <input name="salaryTransfer" type="radio" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">No
+                                    <input name="salaryTransfer" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- <span><input class="" type="radio" name="to" id="yes"> Yes</span>&nbsp;
+                            <span class="no_radio"><input class="" type="radio" name="to" id="no"> No</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="find_cards_section">
+                        <button class="btn btn-md find_cards_btn" (click)="findAutoFinance()">FIND A FINANCE</button>
+                        <!-- <div class="find_cards_content"> -->
+                        <p>One click to see all credit cards from all Saudi banks</p>
+                        <p class="more_text">e.g. Alrajhi Bank, Riyad Bank, Alinma bank, Albilad Bank,
+                            Aljazirah bank,
+                            NCB,
+                            ANB and more…</p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="card d-none d-lg-none filter-section-modal mt-4">
+        <div class="d-flex justify-content-between">
+            <div class="">
+                <div class="content">
+                    <p>Set your Auto-lease details</p>
+                </div>
+            </div>
+            <div class="">
+                <p data-toggle="modal" data-target="#exampleModalToggle">
+                    <span><i class="fa fa-filter"></i></span> &nbsp;
+                    <span>Filter</span></p>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="cards_list">
+        <div class="container">
+            <div class="filter_part">
+                <p>Filter</p>
+                <p>Sort</p>
+            </div>
+            <div class="no_fees_and_add_filter">
+
+                <div class="dropdown add-filter-dropdown">
+                    <div class="add_filter dropdown-toggle" data-toggle="dropdown">Add filter +</div>
+                    <ul class="dropdown-menu">
+                        <li><a>Without salary transfer</a></li>
+                        <li><a>Shariah compliant</a></li>
+                        <!-- <li><a>Shariah compliance</a></li>
+                        <li><a>Shariah compliance</a></li>
+                        <li><a>Shariah compliance</a></li>
+                        <li><a>Shariah compliance</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- <div class="add_filter" data-toggle="modal" data-target="#exampleModalToggle">
+                    Add filter +
+                </div> -->
+                <div class="no_fees">
+                    <p><span>X</span>&nbsp; Shariah compliance</p>
+                </div>
+            </div>
+            <div>
+                <div class="card custom-card" *ngFor="let item of autoLoansList;let i=index">
+                    <div class="card-body">
+                        <div class="visa_main_part">
+                            <div>
+                                <h1> {{item.vehicle.name}} </h1>
+                                <p *ngIf="item.shariah_Compliant"><span><img src="../../../assets/images/main_images/title.PNG" width="30px"
+                                            alt=""></span>
+                                    &nbsp;<span>Shariah complaint</span>
+                                </p>
+                            </div>
+                            <div class="share_and_compare">
+                                <div class="user_option mr-3">
+                                    <img src="../../../assets/images/main_images/np_share.svg" alt="">
+                                    <span>Share</span>
+                                </div>
+                                <div class="user_option">
+                                    <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                    <span>Add to compare</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div class="visa_image">
+                                        <img src={{item.vehicle.imageDetails[0].fullURL}} alt="image">
+                                        <!-- <img src="../../../assets/images/main_images/bank_almad.png" alt=""> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row amount_types">
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>51,270</h2> <span>SAR</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>All Payments Including Fees</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1,424</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Monthly Installment</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1.1</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Management Fees</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div>
+                                        <button class="btn btn-md btn-block apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row text-center refund-row">
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <img src="../../../assets/images/main_images/insured.PNG" alt="">
+                                            <span>Insurance included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="goto_details">
+                                    <img src="../../assets/images/main_images/triangle.svg" alt="">
+                                    <span>More Details</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card custom-card d-none">
+                    <div class="card-body">
+                        <div class="visa_main_part">
+                            <div>
+                                <h1>Auto-lease for new cars</h1>
+                                <p><span><img src="../../../assets/images/main_images/title.PNG" width="30px"
+                                            alt=""></span>
+                                    &nbsp;<span>Shariah complaint</span>
+                                </p>
+                            </div>
+                            <div class="share_and_compare">
+                                <div class="user_option mr-3">
+                                    <img src="../../../assets/images/main_images/np_share.svg" alt="">
+                                    <span>Share</span>
+                                </div>
+                                <div class="user_option">
+                                    <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                    <span>Add to compare</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div class="visa_image">
+                                        <img src="../../../assets/images/main_images/bank_almad.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row amount_types">
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>51,270</h2> <span>SAR</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>All Payments Including Fees</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1,424</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Monthly Installment</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1.1</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Management Fees</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div>
+                                        <button class="btn btn-md btn-block apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row text-center refund-row">
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <img src="../../../assets/images/main_images/insured.PNG" alt="">
+                                            <span>Insurance included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="goto_details">
+                                    <img src="../../assets/images/main_images/triangle.svg" alt="">
+                                    <span>More Details</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card custom-card d-none">
+                    <div class="card-body">
+                        <div class="visa_main_part">
+                            <div>
+                                <h1>Auto-lease for new cars</h1>
+                                <p><span><img src="../../../assets/images/main_images/title.PNG" width="30px"
+                                            alt=""></span>
+                                    &nbsp;<span>Shariah complaint</span>
+                                </p>
+                            </div>
+                            <div class="share_and_compare">
+                                <div class="user_option mr-3">
+                                    <img src="../../../assets/images/main_images/np_share.svg" alt="">
+                                    <span>Share</span>
+                                </div>
+                                <div class="user_option">
+                                    <img src="../../../assets/images/main_images/np_add.svg" alt="">
+                                    <span>Add to compare</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div class="visa_image">
+                                        <img src="../../../assets/images/main_images/bank_almad.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row amount_types">
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>51,270</h2> <span>SAR</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>All Payments Including Fees</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1,424</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Monthly Installment</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="amount">
+                                                <h2>1.1</h2> <span>%</span>
+                                            </div>
+                                            <div class="amount_text">
+                                                <p>Management Fees</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3 align-items-center">
+                                <div class="col-md-4">
+                                    <div>
+                                        <button class="btn btn-md btn-block apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row text-center refund-row">
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <p>APR</p><span class="amount">3.6 %</span>
+                                        </div>
+                                        <div class="col-md-4 refund_not">
+                                            <img src="../../../assets/images/main_images/insured.PNG" alt="">
+                                            <span>Insurance included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="goto_details">
+                                    <img src="../../assets/images/main_images/triangle.svg" alt="">
+                                    <span>More Details</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

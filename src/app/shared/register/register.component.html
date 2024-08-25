@@ -1,0 +1,230 @@
+<!-- <p>login works!</p> -->
+
+<section id="login_page">
+  <div class="">
+    <div class="background_shapes">
+      <div class="register-container">
+        <div class="top_background_shape"></div>
+        <div class="bottom_background_shape"></div>
+        <div class="register-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="register-left-content">
+                  <div class="app-title">
+                    <p>Creditly</p>
+                  </div>
+                  <div class="register-content">
+                    <p>
+                      <span class="material-icons">check</span> Start Quickly
+                    </p>
+                    <small>Get you account and start using Creditly services for
+                      free within 2 minutes. All what you need is only your
+                      mobile number!</small>
+                  </div>
+                  <div class="register-content">
+                    <p>
+                      <span class="material-icons">check</span>
+                      Get best product
+                    </p>
+                    <small>Starting from the online account opening to getting any
+                      banking product. Creditly is your one stop shop to check
+                      and compare products from different banks and find their
+                      features easily</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="creditly-logo-header">
+                  <a [routerLink]="['/creditly/cards-search']">
+                    <img src="../../assets/images/header-images/header-main-logo.png" alt="">
+                  </a>
+                  <h2>Creditly</h2>
+                </div>
+                <div class="register_card">
+
+                  <div class="card custom-card">
+                    <div class="card-body">
+                      <div class="status-stepper">
+                        <ul>
+                          <li class="">
+                            <span class="stepper-ball stepper-active"></span>
+                            <small>Step 1</small>
+                          </li>
+                          <li class="stepper-line-wrapper">
+                            <span class="stepper-line"></span>
+                          </li>
+                          <li>
+                            <span class="stepper-ball"
+                              [ngClass]="{'stepper-active': currentDisplaySection===2 || currentDisplaySection===3}"></span>
+                            <small>Step 2</small>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="create-account-step" *ngIf="currentDisplaySection===0">
+                        <div class="main_heading">
+                          <h4>Create your account</h4>
+                        </div>
+                        <div class="register_form">
+                          <div class="form-group">
+                            <label for="">Mobile number</label>
+                            <input type="tel" class="form-control" placeholder="Enter mobile number"
+                              [(ngModel)]="mobileNo" required
+                              [ngClass]="{validationClass: loginFormValidationFlag && mobileNo?.length==0}" />
+                          </div>
+
+                          <div class="text-center mt-5">
+                            <button class="btn btn-md register_btn" (click)='register1()' [disabled]="submit">
+                              Get one time password
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="otp-one-step" *ngIf="currentDisplaySection===1">
+                        <div class="main_heading">
+                          <h4>Enter the OTP you received on your mobile</h4>
+                        </div>
+                        <div class="register_form">
+                          <div class="form-group">
+                            <label for="">One time password</label>
+                            <input type="text" class="form-control" placeholder="Enter otp" [(ngModel)]="otp"
+                              [ngClass]="{validationClass: loginFormValidationFlag && otp.length==0}" />
+                          </div>
+                          <div class="resend-code-text">
+                            <span class="code-time">Resent code in 60 seconds</span>
+                            <span class="code-text">Resend Code</span>
+                            <!-- <div class="row">
+                              <div class="col-md-4"><span>Resent code in 60 seconds</span></div>
+                              <div class="col-md-8">
+                                <span class="">Resend Code</span>
+                              </div>
+                            </div> -->
+                          </div>
+                          <div class="text-center mt-5">
+                            <button class="btn btn-md register_btn confirm_btn" (click)='register2()'
+                              [disabled]="submit">
+                              Confirm
+                            </button>
+                            <!-- (click)='currentDisplaySection =2' -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="auth-step" *ngIf="currentDisplaySection===2">
+                        <div class="main_heading">
+                          <h4>Authentication through Absher</h4>
+                        </div>
+                        <div class="register_form">
+                          <form [formGroup]="formGroup">
+                            <div class="form-group">
+                              <label for="">National ID/Iqama</label>
+                              <input type="text" class="form-control" placeholder="Enter national id/Iqama"
+                                formControlName="IqamaID"
+                                [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['IqamaID'].errors}" />
+                            </div>
+                            <!-- 
+                            <div class="form-group">
+                              <label for="">Date of birth</label>
+                              <input type="date" class="form-control" placeholder="Enter Date of birth" />
+                            </div> -->
+                            <!-- <div class="form-group">
+                              <label for="" class="">Work Selector</label>
+                              <select class="form-control form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                              
+                            </div> -->
+                            <div class="form-group">
+                              <label for="">Password</label>
+                              <input type="password" class="form-control" placeholder="Enter password"
+                                formControlName="Password"
+                                [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['Password'].errors}" />
+                            </div>
+                            <div class="form-group">
+                              <label for="">Confirm password</label>
+                              <input type="password" class="form-control" placeholder="Enter confirm password"
+                                formControlName="comPassword"
+                                [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['comPassword'].errors}" />
+                              <p *ngIf="loginFormValidationFlag && (formGroup.controls['comPassword'].value !== formGroup.controls['Password'].value)"
+                                class="validationPClass">Confirm Password and Password not match</p>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Date of birth</label>
+                              <input type="date" class="form-control" placeholder="Enter Date of birth"
+                                formControlName="DateOfBirth"
+                                [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['DateOfBirth'].errors}" />
+                            </div>
+
+
+                            <div class="text-center mt-5">
+                              <button class="btn btn-md register_btn confirm_btn" (click)='register3()'
+                                [disabled]="submit">
+                                Confirm
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="otp-two-step" *ngIf="currentDisplaySection===3">
+                        <div class="main_heading">
+                          <h4>Enter the OTP you received on your mobile</h4>
+                        </div>
+                        <div class="register_form">
+                          <div class="form-group">
+                            <label for="">One time password</label>
+                            <input type="text" class="form-control" placeholder="Enter otp" [(ngModel)]="otpAbsher"
+                              [ngClass]="{validationClass: loginFormValidationFlag && otpAbsher.length==0}" />
+                          </div>
+                          <div class="resend-code-text">
+                            <span class="code-time">Resent code in 60 seconds</span>
+                            <span class="code-text">Resend Code</span>
+                            <!-- <div class="row">
+                              <div class="col-md-4"><span>Resent code in 60 seconds</span></div>
+                              <div class="col-md-8">
+                                <span class="">Resend Code</span>
+                              </div>
+                            </div> -->
+                          </div>
+                          <div class="text-center mt-5">
+                            <button class="btn btn-md register_btn confirm_btn" (click)='register4()'
+                              [disabled]="submit" routerLinkActive="router-link-active">
+                              Confirm
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="go_login">
+                        <p>
+                          Have an account ?
+                          <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+                        </p>
+                      </div>
+                      <div class="disclaimer_text">
+                        <p>
+                          Disclaimer, Lorem ipsum dolor sit amet, consectetur
+                          adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Lorem ipsum dolor sit
+                          amet, consectetur adipiscing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="creditly_logo">
+          <img src="../../assets/images/header-images/header-sec-logo.svg" alt="" />
+          <h2>Creditly</h2>
+        </div>
+        <div class="terms_conditions">
+          <a>Privacy & Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

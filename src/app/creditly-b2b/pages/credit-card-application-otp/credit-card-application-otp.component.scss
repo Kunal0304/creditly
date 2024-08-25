@@ -1,0 +1,257 @@
+// @import "../../../variable_styles.scss";
+@import "../../../../variable_styles.scss";
+
+.applied-item {
+  background-color: #F7FBFF;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+  img {
+    max-width: 95px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+#login_page {
+  position: relative;
+  .background_shapes {
+    position: relative;
+    .register-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .top_background_shape {
+        clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+        background: #fff;
+        height: 350px;
+      }
+      .bottom_background_shape {
+        clip-path: polygon(0 0%, 100% 100%, 100% 100%, 0 100%);
+        background: #000;
+        height: 82.6vh;
+      }
+    }
+  }
+  .register-wrapper {
+    position: absolute;
+    z-index: 2;
+    left: 45%;
+    transform: translate(-45%, -275px);
+    top: 350px;
+    .register-left-content {
+      padding: 20px 0;
+      .app-title {
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          color: #000;
+          font-family: "Cairo", sans-serif;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .register-content {
+        margin-bottom: 25px;
+        p {
+          margin-bottom: 2px;
+          color: $primary_green;
+          font-size: 22px;
+          font-family: "Cairo", sans-serif;
+          font-weight: 500;
+          margin-left: 10px;
+          span {
+            border-left: 1px solid;
+            font-size: 14px;
+            padding-left: 4px;
+            padding-right: 6px;
+            font-family: "Material Icons" !important;
+          }
+        }
+        small {
+          line-height: 14px;
+          display: block;
+          font-size: 70%;
+          color: #777d90;
+          font-family: "Cairo", sans-serif;
+          font-weight: 500;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  
+  .register_card {
+    width: 450px;
+    margin: auto;
+
+    .custom-card {
+      box-shadow: 0px 0px 26px #00000029;
+      border: none;
+      // height: 550px;
+      height: 100%;
+      .card-body{
+        padding: 2rem;
+      }
+      .status-stepper {
+        ul {
+          list-style-type: none;
+          margin: 0 auto;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          li {
+            span.stepper-ball {
+              width: 20px;
+              height: 20px;
+              border: 2px solid #292f39;
+              border-radius: 50%;
+              display: list-item;
+              margin: auto;
+            }
+            small {
+              color: #777d90;
+              font-size: 70%;
+            }
+          }
+
+          li.stepper-line-wrapper {
+            display: inline-flex;
+            align-self: flex-start;
+            margin: 10px 0;
+            span.stepper-line {
+              border: 1px solid;
+              width: 50px;
+              margin: 0 10px;
+            }
+          }
+
+          .stepper-active {
+            border-color: $primary_green !important;
+            background: $primary_green;
+          }
+        }
+      }
+      .main_heading {
+        font-family: "Cairo", sans-serif;
+        h5{
+          font-weight: 600;
+        }
+      }
+      .register_form {
+        margin: 50px 0px 20px 0px;
+        .form-group {
+          label {
+            font-family: "Cairo", sans-serif;
+            opacity: 0.5;
+            font-weight: 600;
+          }
+          .form-control {
+            border: none;
+            border-bottom: solid 1px #000;
+            border-radius: 0px;
+            padding-left: 0px;
+            font-weight: 600;
+          }
+        }
+        .register_btn {
+          background-color: $primary_green;
+          //   padding: 8px 40px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 3px;
+          transition: 0.3s all;
+          font-family: "Cairo", sans-serif;
+          &:hover {
+            background-color: #07ab7d;
+          }
+        }
+        .confirm_btn {
+          padding: 8px 70px;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+      .go_login {
+        text-align: center;
+        p {
+          font-size: 13px;
+          font-family: "Cairo", sans-serif;
+          a {
+            color: $primary_green;
+            font-weight: 600;
+          }
+        }
+      }
+      .disclaimer_text {
+        margin-top: 15px;
+        p {
+          font-size: 11px;
+          color: #777d90;
+          font-family: "Cairo", sans-serif;
+        }
+      }
+    }
+  }
+  .creditly_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 20%;
+    bottom: 5%;
+    color: #fff;
+    img {
+      max-width: 60px;
+    }
+    h2 {
+      margin-left: 20px;
+      margin-top: 5px;
+      font-size: 18px;
+      font-family: "Cairo", sans-serif;
+    }
+  }
+  .terms_conditions {
+    position: absolute;
+    bottom: 15px;
+    left: 42%;
+    // text-align: center;
+    font-family: "Cairo", sans-serif;
+    a {
+      color: #01dbff;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+}
+@media screen and (max-width: 800px){
+  #login_page .register_card{
+    width: 390px;
+    .custom-card{
+      height: 100%;
+    }
+  }
+  #login_page .background_shapes .register-container .top_background_shape{
+    height: 180vh;
+  }
+  
+}
+@media screen and (max-width: 575px){
+  #login_page .register_card{
+    width: 290px;
+    .custom-card{
+      height: 100%;
+    }
+  } 
+}

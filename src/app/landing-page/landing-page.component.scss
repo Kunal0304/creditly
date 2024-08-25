@@ -1,0 +1,355 @@
+
+@import "../../variable_styles.scss";
+
+#cards_search_landing_page {
+  margin-top: 100px;
+    .sky_background {
+        // background: #0080FF 0% 0% no-repeat padding-box;
+        background-color: $primary_sky_blue;
+        padding: 20px 0px;
+        // background-color: #EDF4FF;
+        .content {
+            // padding: 30px 0px;
+            p {
+              font-size: 13px;
+              color: #777d90;
+            }
+        }
+        .monthly_income {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .text {
+            color: #282F3A;
+            font-size: 15px;
+            font-weight: 500;
+          }
+          .amount {
+            color: #282F3A;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          p {
+            margin-bottom: 0px;
+          }
+        }
+        .are_you_from {
+          color: #282F3A;
+          font-weight: 500;
+          font-size: 15px;
+          padding-left: 38px;
+        }
+        .find_cards_section {
+          text-align: center;
+          padding: 40px 0px;
+          p {
+            font-size: 15px;
+            color: #282F3A;
+            font-weight: 500;
+            margin-bottom: 0px !important;
+            max-width: 500px;
+            margin: 13px auto;
+          } 
+          .more_text {
+            font-size: 12px;
+            color: #898989;
+            max-width: 350px;
+            margin: 0px auto;
+          }
+          .find_cards_content {
+            max-width: 488px;
+            margin: auto;
+          }
+          .find_cards_btn {
+            background-color: #282F3A;
+            color: #fff;
+            font-size: 19px;
+            padding: 8px 22px;
+            border-radius: 3px;
+          }
+        }
+    }
+    .looking_for {
+        border-left: solid 1px $primary_green;
+        color: $primary_green;
+        font-size: 11px;
+        font-weight: 500;
+        padding-left: 10px;
+        margin-bottom: 0px;
+    }
+}
+
+.square_bg {
+  background-color: #282F3A;
+  .custom_container {
+    padding: 30px 0px 20px;
+  }
+  .disclaimer_text {
+    margin: 50px 0px;
+    .title {
+        color: $primary_green;
+        border-left: solid 1px $primary_green;
+        padding-left: 14px;
+        font-size: 24px;
+    }
+    .content {
+        color: $primary_sky_blue;
+        font-size: 14px; 
+        margin: 0px 13px 17px;
+        max-width: 376px;
+    }
+  }
+  .main_three_blocks {
+    display: flex;
+    justify-content: space-between;
+    .register_sections {
+      .title {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 300;
+        margin: 10px 0px;
+  
+      }
+      .content {
+        font-size: 14px;
+        max-width: 190px;
+        color: #01DBFF;
+      }
+    }
+  }
+  .get_most {
+    color: #fff;
+    margin-top: 60px;
+    max-width: 400px;
+    margin: 60px auto;
+    h6 {
+      color: $primary_green;
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  
+}
+.triangle_bg {
+  background-color: #282F3A;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  margin-top: -25px;
+}
+.register_section {
+  margin-top: 20px;
+  .register_now_btn {
+    color: #fff;
+    background-color: $primary_green;
+    font-size: 20px;
+    padding: 7px 70px;
+  }
+  p {
+    font-size: 15px;
+    margin: 20px;
+  }
+}
+
+.why_creditly {
+  padding: 60px 0px;
+  .main_topic {
+    margin: 20px 0px !important;
+    .one {
+      color: #000 !important;
+      border-left: solid 1px #000 !important;
+    }
+  }
+  .disclaimer_text {
+    // margin: 50px 0px;
+    .title {
+        color: $primary_green;
+        border-left: solid 1px $primary_green;
+        padding-left: 14px;
+        font-size: 24px;
+    }
+    .content {
+        color: #777D90;
+        font-size: 14px; 
+        margin: 0px 13px 17px;
+        max-width: 376px;
+    }
+  }
+  .four_blocks {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.our_partners {
+  background: #EBEBEC;
+  padding: 30px 0px 165px 0px;
+  clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 53%);
+  margin-bottom: -256px;
+  height: 535px;
+  
+  .disclaimer_text {
+    // margin: 50px 0px;
+    .title {
+      color: #000 !important;
+      border-left: solid 1px #000 !important;
+      padding-left: 14px;
+      font-size: 24px;
+    }
+    .content {
+        color: #777D90;
+        font-size: 14px; 
+        margin: 0px 13px 17px;
+        max-width: 376px;
+    }
+  }
+  .list_bank_images {
+    margin-bottom: 50px;
+    .images_position {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/*  For Tabs */
+
+.nav-pills .nav-link.active {
+  background-color: #fff;
+    color: #000;
+    border-bottom: solid 3px $primary_green;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 0px !important;
+    &::before {
+      // background-image: url(../../assets/images/header-images/triangle-green-background.png);
+      // background-color: red;
+      content: url(../../assets/images/header-images/triangle-green-background.png);
+      height: 20px;
+      width: 20px;
+      margin-right: 8px;
+    }
+}
+
+.nav-pills .nav-link {
+  border-radius: .25rem;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* custom radio buttons */
+
+.custom_radio_button {
+  // max-width: 100px;
+  input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+}
+.no_radio {
+  margin-left: 30px;
+}
+  /* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $primary_green;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+}
+
+::ng-deep {
+  .ngx-slider .ngx-slider-bubble {
+    cursor: default;
+    bottom: -35px !important;
+    font-weight: 500;
+    padding: 1px 3px;
+    color: #55637d;
+    font-size: 16px;
+  }
+  .ngx-slider .ngx-slider-pointer {
+    // background-color: $primary_green !important;
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px !important;
+    top: -19px !important;
+    background: url(../../assets/images/main_images/Group_slider_bg.svg) !important;
+  }
+  .ngx-slider .ngx-slider-pointer:after {
+      display: none !important;
+  }
+  .ngx-slider {
+    margin: 13px 0 15px !important;
+  }
+  .ngx-slider .ngx-slider-selection {
+    background-color: $primary_green !important;
+  }
+  .ngx-slider .ngx-slider-span ,.ngx-slider-bar-wrapper .ngx-slider-selection-bar {
+    visibility: visible !important;
+    .ngx-slider .ngx-slider-selection {
+      background-color: $primary_green !important;
+    }
+  }
+}
+
+
+
+

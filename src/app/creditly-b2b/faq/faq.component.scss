@@ -1,0 +1,136 @@
+
+
+@import "../../../variable_styles.scss";
+
+.global_main_section {
+    position: relative;
+    height: 230vh;
+  }
+  
+  .header_starts {
+    position: relative;
+      /* height: 65vh; */
+    //   max-width: 1347px;
+    width: 100%;
+      /* -webkit-clip-path: polygon(0 0, 100% 0%, 100% 0, 0 100%); */
+      clip-path: polygon(0% 8%, 100% 8%, 100% 8%, 1px 100%);
+      background: transparent linear-gradient(
+  154deg
+  , #FFFFFF 25%, #777D90 100%) 20% 0% no-repeat padding-box;
+      height: 120vh;
+      opacity: 1;
+      padding: 20px 0px;
+      margin-top: -165px;
+  
+    @include mobile {
+        clip-path: polygon(0 0, 100% 0%, 100% 50%, 0% 100%);
+        // margin-top: 0px;
+        margin-top: 30px;
+    height: 60vh;
+    margin-bottom: 100px;
+    }
+  
+   
+  }
+  .page_variable_section {
+    position: relative;
+  }
+
+.faq {
+    // background-color: #EDF4FF;
+    height: 100%;
+   /*  padding-top: 20px;
+    margin-top: -40px; */
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    z-index: 9;
+    @include mobile {
+        top: 8%;
+    }
+    .accordion-header{
+        background-color: #F0F3F7;
+        margin-bottom: 0.7rem;
+        width: 100%;
+        display: flex;
+    }
+    .accordion-button{
+        padding: 10px 20px;
+        width: 100%;
+        position: relative;
+        font-weight: 600;
+    }
+    .accordion-body p{
+        font-size: 13px;
+        color: #282F3A;
+        font-weight: 600;
+    }
+    .accordion-item{
+        margin-bottom: 0px;
+        
+        a{
+            font-size: 14px;
+            cursor: pointer;
+            line-height: initial;
+        }
+    }
+    .accordion-button:not(.collapsed){
+        background-color: #282F3A;
+        color: #fff;
+        position: relative;
+        width: 100%;
+    }
+    .accordion-button:not(.collapsed):hover{
+        color: #fff;
+    }
+    .accordion-header > a:not(.collapsed)::before{
+        color: #fff;
+    }
+    .accordion-header > a:before {
+        float: right !important;
+        font-family: FontAwesome;
+        // content:"\f068";
+        content:"\002D";
+        padding-right: 5px;
+        font-size: 25px;
+        color: #707070;
+        font-weight: bold;
+        
+    }
+    .accordion-header > a.collapsed:before {
+        float: right !important;
+        // content:"\f067";
+        content:"\002B";
+        font-size: 25px;
+        color: #707070;
+        font-weight: bold;
+    }
+    .accordion-header > a:hover, 
+    .accordion-header > a:active, 
+    .accordion-header > a:focus  {
+        text-decoration:none;
+    }
+}
+.card {
+    box-shadow: 0px 0px 15px #00000014;
+    border: none;
+    .card-header {
+        background-color: $primary_sky_blue;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.form-control{
+    border: 1px solid #707070;
+}
+.title{
+    font-size: 17px;
+    color: #09BC8A;
+    font-weight: 600;
+}
+.mt-3 {
+    margin-top: 25px !important;
+}
+
+

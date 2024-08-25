@@ -1,0 +1,58 @@
+
+$primary_green : #09BC8A;
+$primary_sky_blue : #EDF4FF; 
+
+
+
+//  ********* Media Queries For Desktop  ************
+
+$for-desktop: 1200px;
+
+@mixin desktop {
+  @media screen and (max-width: #{ $for-desktop }) {
+    @content; 
+  }
+}
+
+//  ********* Media Queries For Tab  ************
+
+$tab: 991px;
+
+@mixin tab {
+  @media screen and (max-width: #{ $tab }) {
+   @content;
+  }
+}
+
+//  ********* Media Queries For Mobile  ************
+
+$mobile: 767px;
+
+@mixin mobile {
+  @media screen and (max-width: #{ $mobile }) {
+    @content;
+  }
+}
+.validationClass {
+  border-bottom: solid 1px red !important;
+  
+}
+.validationClass::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+.validationPClass{
+  color:red;
+  font-size: 13px;
+}
+button:disabled {
+  background: #dddddd!important;
+}
+.noDataFound{
+  font-size: 22px;
+  text-align: center;
+  margin-top: 80px;
+  color: #5acaa1;
+  font-weight: 600;
+
+}

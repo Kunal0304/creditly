@@ -1,0 +1,61 @@
+<!-- <p>login works!</p> -->
+
+<section id="login_page">
+    <!-- <div class=""> -->
+        <div class="background_shapes">
+            <div class="top_background_shape">
+
+            </div>
+            <div class="bottom_background_shape">
+
+            </div>
+        </div>
+        <!-- <div class="container"> -->
+            <div class="login_card">
+                <div class="creditly_logo">
+                    <a [routerLink]="['/creditly/cards-search']">
+                        <img src="../../assets/images/header-images/header-main-logo.png" alt="">
+                    </a>
+                    <h2>Creditly</h2>
+                </div>
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="main_heading">
+                            <h4>Login to your account</h4>
+                        </div>
+                        <div class="login_form">
+                            <form [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+                                <div class="form-group">
+                                    <label for="">Mobile number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter mobile number" formControlName="Mobile"
+                                    [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['Mobile'].errors}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter password" formControlName="password"
+                                    [ngClass]="{validationClass: loginFormValidationFlag && formGroup.controls['password'].errors}">
+                                </div>
+                                <div class="text-center mt-5">
+                                    <!-- (click)="gotoProfile()" -->
+                                    <button class="btn btn-md login_btn" [disabled]="submit" >Login</button>
+                                    <div class="go_signup">
+                                        <p>Don't have an account? <a [routerLink]="['/register']">Sign up</a></p>
+                                    </div>
+                                </div>
+                                <div class="disclaimer_text">
+                                    <p>Disclaimer, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
+                                        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="terms_conditions">
+                <a>Privacy & Terms</a>
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
+</section>

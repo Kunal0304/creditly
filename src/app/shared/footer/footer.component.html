@@ -1,0 +1,127 @@
+<!-- <p>footer works!</p> -->
+
+<section id="footer">
+    <div class="container">
+        <div class="layout-container">
+            <div class="row footer_logo_part text-right position-relative">
+                <div class="col-md-12 go_to_top">
+                    <span class="img-arrow" (click)="goTop()">
+                        <img class="up-arrow" src="../../../assets/images/footer-images/up-arrow.svg" width="11px" />
+                        <img src="../../../assets/images/footer-images/down-arrow.svg" />
+
+                    </span>
+                    <p class="img-text"><b>UP</b></p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="go_to_top">
+            <div class="inner_go_to_top">
+                <span class="material-icons" (click)="goTop()">arrow_upward</span>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="footer_curve">
+        <div class="container custom-continer-styles">
+            <!-- <div class="footer_top_right_logo">
+            <img src="../../../assets/images/footer-images/bank-aljazira-logo.png" alt="">
+        </div> -->
+            <div class="layout-container">
+                <div class="col-md-12">
+                    <div class="row footer_logo_part">
+                        <div class="col-md-3 col-6">
+                            <img src="../../../assets/images/footer-images/footer-logo.png" width="50px" alt="">
+                            <h4 class="footer_title">Creditly</h4>
+                        </div>
+                        <div class="col-md-3 ar-row col-6">
+                            <span (click)="selectLanguage('AR')" *ngIf="!showEnglishLogo"><img
+                                    src="../../../assets/images/footer-images/ar.PNG" alt="ar" class="ar-image" >
+                                AR </span>
+                            <span (click)="selectLanguage('EN')" *ngIf="showEnglishLogo"><img
+                                    src="../../../assets/images/footer-images/english-ln.png" alt="en" class="en-image">
+                                EN</span>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"></div>
+
+                    </div>
+                    <div class="row footer_more_info">
+                        <div class="col-md-3 col-6">
+                            <div class="footer_links_section">
+                                <p>About us</p>
+                                <ul>
+                                    <li><a routerLink="./aboutus">Creditly</a></li>
+                                    <li><a >Careers</a></li>
+                                    <li><a >Privacy Policy</a></li>
+                                    <li><a >Terms and <br>Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="footer_links_section">
+                                <p>More</p>
+                                <ul>
+                                    <li>SAMA Cares</li>
+                                    <li>Rates</li>
+                                    <li>Reviews</li>
+                                    <li><a routerLink="./faq">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="footer_links_section">
+                                <p>More</p>
+                                <ul>
+                                    <li>SAMA Cares</li>
+                                    <li>Rates</li>
+                                    <li>Reviews</li>
+                                    <li><a routerLink="./faq">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer_social_icons">
+                                <div class="social_media">
+                                    <a target="_blank" href="https://mobile.twitter.com/creditlysa">
+                                        <img src="../../../assets/images/footer-images/Group_twitter.svg" alt="">
+                                    </a>
+                                    <a target="_blank" href="https://www.youtube.com/channel/UCB5_cfHm5chReV_wBGDYsDg">
+                                        <img class="youtubeImage" src="../../../assets/images/footer-images/Asset 1.svg"
+                                            alt="">
+                                    </a>
+                                    <a target="_blank" href="https://www.linkedin.com/company/creditlysa/">
+                                        <img src="../../../assets/images/footer-images/iconmonstr-linkedin-4.svg"
+                                            alt="">
+                                    </a>
+                                    <a target="_blank" href="https://www.instagram.com/creditlysa/">
+                                        <img class="youtubeImage"
+                                            src="../../../assets/images/footer-images/Instagram.svg" alt="">
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="bank_logo_sec">
+                                    <img src="../../../assets/images/footer-images/Group_footer_saudi_credit_bank_logo.svg"
+                                        alt="">
+                                        <img class="mt-3" src="../../../assets/images/footer-images/vision-2030-logo.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="disclaimer_text">
+                            <p class="title">Disclaimer</p>
+                            <p class="content">Note that the service offered is completely free and no charges are
+                                applied.
+                                Creditly representatives
+                                will not ask for any personal informations for registration in the platform or applying
+                                for the
+                                products except if the customer requests assistance from our social media channels or
+                                our call
+                                center at 920001273</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

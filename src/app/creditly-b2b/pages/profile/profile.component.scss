@@ -1,0 +1,228 @@
+@import "../../../../variable_styles.scss";
+
+.main-content-section {
+
+  .tab-section {
+    max-width: 900px;
+    margin: 45px auto;
+    padding-top: 30px;
+  }
+
+  .recommended-section {
+    background-color: #F7FBFF;
+    .custom-card1 {
+      box-shadow: 0px 0px 26px #00000029;
+      border: none;
+      height: 220px;
+      width: 200px;
+      margin: 20px 5px 20px 5px;
+      border-radius: 0px;
+  }
+    .recommended-section-body {
+      max-width: 900px;
+      margin: 45px auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.header-section {
+  max-width: 940px;
+  margin: 10px auto;
+}
+
+#triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  top: -9px;
+  right: 15px;
+}
+
+.profile-tabs {
+  width: 100%;
+  display: flex;
+}
+
+.fw {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.f-12 {
+  font-size: 12px;
+}
+
+.l-h {
+  line-height: 1;
+}
+
+.nav-item .nav-link.person-name {
+  color: #09bc8a;
+  font-size: 16px;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+.nav-item .nav-link.profile {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #fff;
+  color: #000;
+  border-radius: 0px;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0px !important;
+
+  &::before {
+    content: url("../../../../assets/images/header-images/profile-traingle.png");
+    margin-right: 8px;
+  }
+}
+
+.nav-pills {
+  flex: 30%;
+}
+
+.nav-pills .nav-link {
+  padding: 0.2rem 1.5rem;
+  color: #000;
+  font-size: 14px;
+}
+
+.profile-content {
+  padding: 5px 30px;
+  flex: 70%;
+}
+
+.person-details-row p {
+  margin-bottom: 2px;
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .main-logo {
+    padding: 10px 0px 10px 30px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .d-hide-mobile {
+    display: none;
+  }
+  .d-show-icon {
+    visibility: visible;
+  }
+  .profile-content{
+    padding: 0px 14px;
+  }
+
+  .profile-tabs{
+    flex-direction: column;
+  }
+
+  .nav-pills {
+    flex: 100%;
+    padding: 5px 30px;
+
+    .nav-link {
+      display: inline-flex;
+      padding: 0.2rem 1rem 0.2rem 1.5rem;
+    }
+
+    i {
+      font-size: 18px;
+    }
+  }
+}
+
+.left-arrow {
+  transform: rotate(180deg);
+  margin-right: -1px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  box-shadow: 0px 0px 20px #00000029;
+  border: none;
+  width: 15rem;
+  top: 10px !important;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+.dropdown-item:focus {
+  background-color: #f8f9fa;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+}
+
+.login_section_left {
+  -webkit-clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+  clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+  background: #000;
+    padding: 7px 8px;
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: center;
+
+  .inner_login_left {
+    -webkit-clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    background: #01DBFF;
+    padding: 5px;
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    left: 3px;
+    bottom: 1px;
+  }
+}
+.login_section_right {
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+  background: #000;
+    padding: 7px 8px;
+    position: relative;
+    top: 0;
+    right: 1px;
+  .inner_login_right {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+    background: #01DBFF;
+    max-width: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    left: 0px;
+    bottom: 1px;
+  }
+}
+
+.main-logo {
+  .logo-title {
+    font-size: 18px;
+    margin-left: 12px;
+    vertical-align: -webkit-baseline-middle;
+  }
+}
+

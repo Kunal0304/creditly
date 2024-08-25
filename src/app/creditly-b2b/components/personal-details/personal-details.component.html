@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-6 details-row mb-3">
+            <div class="">
+                <p class="opacity">Arabic Name</p>
+                <p><b>{{profileDate?.firstName_ar}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Date of Birth</p>
+                <p><b>{{profileDate?.dateOfBirth}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">ID Number</p>
+                <p><b>{{profileDate?.id}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Nationality</p>
+                <p><b>{{filter(profileDate?.userPersonalProfile?.nationalities,profileDate?.userPersonalProfile?.nationalityID)}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Martial Status</p>
+                <p><b>{{filter(profileDate?.userPersonalProfile?.marital_Statuses,profileDate?.userPersonalProfile?.marital_StatusID)}}</b></p>
+            </div>
+        </div>
+        <div class="col-md-6 col-6 details-row">
+            <div>
+                <p class="opacity">English Name</p>
+                <p><b>{{profileDate?.firstName}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Gender</p>
+                <p><b>{{profileDate?.gender}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Expiration Date</p>
+                <p><b>{{profileDate?.idExpiryDateGregorian}}</b></p>
+            </div>
+            <div>
+                <p class="opacity">Place of Birth</p>
+                <p><b>{{profileDate?.placeOfBirth}}</b></p>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="">Mobile number</label>
+                        <input type="text" class="form-control" placeholder="Enter mobile number" [value]="profileDate?.mobile">
+                    </div>
+                </form>
+                
+            </div>            
+        </div>
+    </div>
+</div>

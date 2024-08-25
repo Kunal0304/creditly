@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <form *ngIf="formGroup?.controls" [formGroup]="formGroup">
+        <div class="col-md-12 col-12 contact-row">
+            <div class="row">
+                <div class="col-md-6 col-6">
+                    <p class="opacity">Mobile Number</p>
+                    <p><b>{{profileDate?.mobile}}</b></p>
+                </div>
+                <div class="col-md-6 col-6">
+                        <div class="form-group">
+                            <label class="form-label" for="">Email</label>
+                            <input type="text" class="form-control" placeholder="Enter Email" formControlName="email" 
+                            [ngClass]="{
+                                validationClass:
+                                  loginFormValidationFlag ||
+                                  formGroup.controls['email'].errors
+                              }">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-12 contact-row">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <p class="opacity">National Address</p>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="color-div px-2 py-2">
+                        <span>
+                            <svg height="20" width="20">
+                                <circle cx="10" cy="10" r="3" stroke="#09BC8A" stroke-width="1" fill="#09BC8A" />
+                                Sorry, your browser does not support inline SVG.  
+                              </svg> 
+                        </span>
+                        <span class="f-10 clr-txt">
+                            Default
+                        </span>
+                        <p class="ml-4 my-2">{{profileDate?.userAddress[0].city}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="color-div px-2 py-4">
+                        <p class="my-2">{{profileDate?.userAddress[0].streetName}}</p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="col-md-12 col-12 contact-row">
+            <div class="row">
+                <div class="col-md-6 col-6">
+                   
+                        <div class="form-group">
+                            <label class="form-label" for=""[ngClass]="{
+                                err:
+                                  loginFormValidationFlag &&
+                                  formGroup.controls['residenceTypeID'].errors
+                              }" >Type of Residence</label>
+                            <div class="form-control" style="border-bottom:none">
+                                <select name="cars" id="cars" class="select-input" formControlName="residenceTypeID" (change)="change($event)" >
+                                    <option *ngFor="let res of resType;let i=index;" [value]="res.id">{{res.name}}</option>
+                                  </select>
+                            </div>
+                            
+                        </div>
+                  
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="text-center ml-3" *ngIf="item!='true'">
+            <button class="btn btn-sm cc-btn-primary" [disabled]="submit" id="updateProfile" (click)="update()"  >Update</button>
+          </div>
+    </form>
+    </div>
+</div>
